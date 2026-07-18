@@ -850,6 +850,28 @@ const track = document.getElementById('reviewsTrack');
 document.getElementById('revPrev').addEventListener('click', () => track.scrollBy({left:-380, behavior:'smooth'}));
 document.getElementById('revNext').addEventListener('click', () => track.scrollBy({left: 380, behavior:'smooth'}));
 
+// Before/After sliders
+document.querySelectorAll('[data-ba]').forEach(slider => {
+  const afterWrap = slider.querySelector('.after-wrap');
+  const afterImg = slider.querySelector('.ba-after');
+  const handle = slider.querySelector('.ba-handle');
+  let dragging = false;
+  const setPos = (clientX) => {
+    const rect = slider.getBoundingClientRect();
+    let pct = ((clientX - rect.left) / rect.width) * 100;
+    pct = Math.max(0, Math.min(100, pct));
+    afterWrap.style.width = pct + '%';
+    afterImg.style.width = (100 / (pct/100 || 0.0001)) + '%';
+    handle.style.left = pct + '%';
+  };
+  slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); });
+  window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+  window.addEventListener('mouseup', () => dragging = false);
+  slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, {passive:true});
+  slider.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, {passive:true});
+  slider.addEventListener('touchend', () => dragging = false);
+});
+
 // Rating input
 const ratingInput = document.getElementById('ratingInput');
 const ratingValue = document.getElementById('ratingValue');

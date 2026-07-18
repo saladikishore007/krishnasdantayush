@@ -217,10 +217,32 @@ img{max-width:100%;display:block}
 .faq-a-inner{padding:0 24px 22px;color:var(--ink-soft);font-size:.96rem}
 .faq-item.open .faq-a{max-height:400px}
 
+/* Gallery */
+.gallery{background:linear-gradient(180deg,#f2ece0 0%,var(--bg) 100%)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.ba-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .3s ease,box-shadow .3s ease}
+.ba-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.ba-slider{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:ew-resize;user-select:none;background:#eee}
+.ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-slider .after-wrap{position:absolute;inset:0;overflow:hidden;width:50%}
+.ba-slider .after-wrap img{width:calc(100%/0.5)}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15);transform:translateX(-50%);pointer-events:none}
+.ba-handle::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.25);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f3d3e' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='15 6 9 12 15 18'/><polyline points='9 6 15 12 9 18' transform='translate(6 0)'/></svg>");background-repeat:no-repeat;background-position:center;background-size:22px}
+.ba-tag{position:absolute;top:12px;padding:5px 12px;border-radius:999px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;backdrop-filter:blur(6px);pointer-events:none}
+.ba-tag.before{left:12px;background:rgba(13,43,46,.6)}
+.ba-tag.after{right:12px;background:rgba(201,162,75,.9);color:#1a1a1a}
+.ba-caption{padding:18px 20px}
+.ba-caption h3{font-size:1.02rem;font-weight:600;margin-bottom:4px}
+.ba-caption p{font-size:.88rem;color:var(--muted)}
+.gallery-note{text-align:center;margin-top:32px;font-size:.88rem;color:var(--muted)}
+
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
-.map-wrap{border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);min-height:420px}
+.map-wrap{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);min-height:420px}
 .map-wrap iframe{width:100%;height:100%;border:0;min-height:420px;display:block}
+.map-open{position:absolute;bottom:14px;left:14px;display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--primary);padding:10px 14px;border-radius:999px;font-size:.85rem;font-weight:600;box-shadow:var(--shadow-md);transition:transform .2s ease}
+.map-open:hover{transform:translateY(-2px)}
+.map-open svg{width:16px;height:16px}
 .contact-info{display:flex;flex-direction:column;gap:16px}
 .info-card{background:#fff;padding:24px;border-radius:16px;border:1px solid var(--line);display:flex;gap:16px;align-items:flex-start}
 .info-card .ic{width:46px;height:46px;border-radius:12px;background:var(--mint);color:var(--primary);display:grid;place-items:center;flex-shrink:0}
@@ -276,12 +298,13 @@ img{max-width:100%;display:block}
   .booking-inner{grid-template-columns:1fr;gap:32px}
   .contact-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:20px}
   .section{padding:64px 0}
   .nav-cta .btn-primary span{display:none}
   .nav-cta .btn-primary{padding:12px}
 }
 @media (max-width:520px){
-  .services-grid,.why-grid{grid-template-columns:1fr}
+  .services-grid,.why-grid,.gallery-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .review-card{flex-basis:82vw}
@@ -307,6 +330,7 @@ img{max-width:100%;display:block}
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
       <a href="#reviews">Reviews</a>
       <a href="#book">Book</a>
       <a href="#contact">Contact</a>
@@ -328,6 +352,7 @@ img{max-width:100%;display:block}
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
     <a href="#reviews">Reviews</a>
     <a href="#book">Book Appointment</a>
     <a href="#contact">Contact</a>
@@ -544,7 +569,33 @@ img{max-width:100%;display:block}
 </section>
 </div>
 
+<!-- ============ GALLERY (Before & After) ============ -->
+<!--
+  Placeholder before/after images from Unsplash. Swap the src URLs with
+  real patient photos (with written consent). Recommended size: 800x600,
+  same crop/lighting for before and after so the slider comparison feels honest.
+-->
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Patient Gallery</span>
+      <h2>Real smiles, real results.</h2>
+      <p>A few before-and-after moments from our patients. Drag the slider on each photo to see the transformation.</p>
+    </div>
+    <div class="gallery-grid">
+      ${ba("Smile Makeover","Veneers & whitening — 2 sittings","https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=800&q=70")}
+      ${ba("Teeth Whitening","In-clinic whitening — single visit","https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1581585504841-1cd0d3b6c9b4?auto=format&fit=crop&w=800&q=70")}
+      ${ba("Invisible Aligners","14-month clear aligner plan","https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1626202373070-73ee45c5c15e?auto=format&fit=crop&w=800&q=70")}
+      ${ba("Chipped Tooth Repair","Composite bonding — 45 minutes","https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=800&q=70")}
+      ${ba("Dental Implant","Single-tooth implant + crown","https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=70")}
+      ${ba("Scaling & Polishing","Deep cleaning — routine visit","https://images.unsplash.com/photo-1616391182219-e080b4d1043a?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1595003500447-88d24ee5ed9d?auto=format&fit=crop&w=800&q=70")}
+    </div>
+    <p class="gallery-note reveal">Every photo shared with the patient's consent. Individual results vary — we'll walk you through realistic expectations at your consultation.</p>
+  </div>
+</section>
+
 <!-- ============ REVIEWS ============ -->
+
 <!--
   NOTE: These are placeholder reviews styled to match real Google reviews.
   Swap this section with a live widget (e.g. Elfsight Google Reviews,
@@ -650,10 +701,14 @@ img{max-width:100%;display:block}
     <div class="contact-grid">
       <div class="map-wrap reveal">
         <iframe
-          src="https://www.google.com/maps?q=Parvatha+Nagar+Temple+Road,+Tulasi+Nagar,+Madhapur,+Hyderabad,+Telangana+500081&output=embed"
+          src="https://www.google.com/maps?q=Krishna's+Dant+Ayush,+Parvatha+Nagar+Temple+Road,+Tulasi+Nagar,+Madhapur,+Hyderabad&z=17&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Krishna's Dant Ayush location"></iframe>
+        <a class="map-open" href="https://maps.app.goo.gl/sDeJqhEZEUfAokdV8" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Open in Google Maps
+        </a>
       </div>
       <div class="contact-info reveal delay-1">
         <div class="info-card">
@@ -795,6 +850,28 @@ const track = document.getElementById('reviewsTrack');
 document.getElementById('revPrev').addEventListener('click', () => track.scrollBy({left:-380, behavior:'smooth'}));
 document.getElementById('revNext').addEventListener('click', () => track.scrollBy({left: 380, behavior:'smooth'}));
 
+// Before/After sliders
+document.querySelectorAll('[data-ba]').forEach(slider => {
+  const afterWrap = slider.querySelector('.after-wrap');
+  const afterImg = slider.querySelector('.ba-after');
+  const handle = slider.querySelector('.ba-handle');
+  let dragging = false;
+  const setPos = (clientX) => {
+    const rect = slider.getBoundingClientRect();
+    let pct = ((clientX - rect.left) / rect.width) * 100;
+    pct = Math.max(0, Math.min(100, pct));
+    afterWrap.style.width = pct + '%';
+    afterImg.style.width = (100 / (pct/100 || 0.0001)) + '%';
+    handle.style.left = pct + '%';
+  };
+  slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); });
+  window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+  window.addEventListener('mouseup', () => dragging = false);
+  slider.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, {passive:true});
+  slider.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, {passive:true});
+  slider.addEventListener('touchend', () => dragging = false);
+});
+
 // Rating input
 const ratingInput = document.getElementById('ratingInput');
 const ratingValue = document.getElementById('ratingValue');
@@ -865,6 +942,9 @@ function review(name: string, date: string, text: string) {
 }
 function faq(q: string, a: string) {
   return `<div class="faq-item"><button class="faq-q">${q}<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faq-a"><div class="a-inner faq-a-inner">${a}</div></div></div>`;
+}
+function ba(title: string, desc: string, before: string, after: string) {
+  return `<div class="ba-card reveal"><div class="ba-slider" data-ba><img class="ba-before" src="${before}" alt="${title} before" loading="lazy"/><div class="after-wrap"><img class="ba-after" src="${after}" alt="${title} after" loading="lazy"/></div><span class="ba-tag before">Before</span><span class="ba-tag after">After</span><div class="ba-handle"></div></div><div class="ba-caption"><h3>${title}</h3><p>${desc}</p></div></div>`;
 }
 
 export const Route = createFileRoute("/")({

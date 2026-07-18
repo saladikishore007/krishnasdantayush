@@ -295,12 +295,13 @@ img{max-width:100%;display:block}
   .booking-inner{grid-template-columns:1fr;gap:32px}
   .contact-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:20px}
   .section{padding:64px 0}
   .nav-cta .btn-primary span{display:none}
   .nav-cta .btn-primary{padding:12px}
 }
 @media (max-width:520px){
-  .services-grid,.why-grid{grid-template-columns:1fr}
+  .services-grid,.why-grid,.gallery-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .review-card{flex-basis:82vw}

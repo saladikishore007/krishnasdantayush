@@ -566,7 +566,33 @@ img{max-width:100%;display:block}
 </section>
 </div>
 
+<!-- ============ GALLERY (Before & After) ============ -->
+<!--
+  Placeholder before/after images from Unsplash. Swap the src URLs with
+  real patient photos (with written consent). Recommended size: 800x600,
+  same crop/lighting for before and after so the slider comparison feels honest.
+-->
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Patient Gallery</span>
+      <h2>Real smiles, real results.</h2>
+      <p>A few before-and-after moments from our patients. Drag the slider on each photo to see the transformation.</p>
+    </div>
+    <div class="gallery-grid">
+      ${ba("Smile Makeover","Veneers & whitening — 2 sittings","https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=800&q=70")}
+      ${ba("Teeth Whitening","In-clinic whitening — single visit","https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1581585504841-1cd0d3b6c9b4?auto=format&fit=crop&w=800&q=70")}
+      ${ba("Invisible Aligners","14-month clear aligner plan","https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1626202373070-73ee45c5c15e?auto=format&fit=crop&w=800&q=70")}
+      ${ba("Chipped Tooth Repair","Composite bonding — 45 minutes","https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=800&q=70")}
+      ${ba("Dental Implant","Single-tooth implant + crown","https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=70")}
+      ${ba("Scaling & Polishing","Deep cleaning — routine visit","https://images.unsplash.com/photo-1616391182219-e080b4d1043a?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1595003500447-88d24ee5ed9d?auto=format&fit=crop&w=800&q=70")}
+    </div>
+    <p class="gallery-note reveal">Every photo shared with the patient's consent. Individual results vary — we'll walk you through realistic expectations at your consultation.</p>
+  </div>
+</section>
+
 <!-- ============ REVIEWS ============ -->
+
 <!--
   NOTE: These are placeholder reviews styled to match real Google reviews.
   Swap this section with a live widget (e.g. Elfsight Google Reviews,

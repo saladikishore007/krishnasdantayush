@@ -217,6 +217,25 @@ img{max-width:100%;display:block}
 .faq-a-inner{padding:0 24px 22px;color:var(--ink-soft);font-size:.96rem}
 .faq-item.open .faq-a{max-height:400px}
 
+/* Gallery */
+.gallery{background:linear-gradient(180deg,#f2ece0 0%,var(--bg) 100%)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.ba-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .3s ease,box-shadow .3s ease}
+.ba-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.ba-slider{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:ew-resize;user-select:none;background:#eee}
+.ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-slider .after-wrap{position:absolute;inset:0;overflow:hidden;width:50%}
+.ba-slider .after-wrap img{width:calc(100%/0.5)}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15);transform:translateX(-50%);pointer-events:none}
+.ba-handle::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.25);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f3d3e' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='15 6 9 12 15 18'/><polyline points='9 6 15 12 9 18' transform='translate(6 0)'/></svg>");background-repeat:no-repeat;background-position:center;background-size:22px}
+.ba-tag{position:absolute;top:12px;padding:5px 12px;border-radius:999px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;backdrop-filter:blur(6px);pointer-events:none}
+.ba-tag.before{left:12px;background:rgba(13,43,46,.6)}
+.ba-tag.after{right:12px;background:rgba(201,162,75,.9);color:#1a1a1a}
+.ba-caption{padding:18px 20px}
+.ba-caption h3{font-size:1.02rem;font-weight:600;margin-bottom:4px}
+.ba-caption p{font-size:.88rem;color:var(--muted)}
+.gallery-note{text-align:center;margin-top:32px;font-size:.88rem;color:var(--muted)}
+
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
 .map-wrap{border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm);min-height:420px}

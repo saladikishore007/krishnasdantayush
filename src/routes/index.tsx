@@ -914,6 +914,9 @@ function review(name: string, date: string, text: string) {
 function faq(q: string, a: string) {
   return `<div class="faq-item"><button class="faq-q">${q}<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faq-a"><div class="a-inner faq-a-inner">${a}</div></div></div>`;
 }
+function ba(title: string, desc: string, before: string, after: string) {
+  return `<div class="ba-card reveal"><div class="ba-slider" data-ba><img class="ba-before" src="${before}" alt="${title} before" loading="lazy"/><div class="after-wrap"><img class="ba-after" src="${after}" alt="${title} after" loading="lazy"/></div><span class="ba-tag before">Before</span><span class="ba-tag after">After</span><div class="ba-handle"></div></div><div class="ba-caption"><h3>${title}</h3><p>${desc}</p></div></div>`;
+}
 
 export const Route = createFileRoute("/")({
   server: {

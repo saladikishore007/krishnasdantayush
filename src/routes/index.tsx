@@ -698,10 +698,14 @@ img{max-width:100%;display:block}
     <div class="contact-grid">
       <div class="map-wrap reveal">
         <iframe
-          src="https://www.google.com/maps?q=Parvatha+Nagar+Temple+Road,+Tulasi+Nagar,+Madhapur,+Hyderabad,+Telangana+500081&output=embed"
+          src="https://www.google.com/maps?q=Krishna's+Dant+Ayush,+Parvatha+Nagar+Temple+Road,+Tulasi+Nagar,+Madhapur,+Hyderabad&z=17&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Krishna's Dant Ayush location"></iframe>
+        <a class="map-open" href="https://maps.app.goo.gl/sDeJqhEZEUfAokdV8" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Open in Google Maps
+        </a>
       </div>
       <div class="contact-info reveal delay-1">
         <div class="info-card">

@@ -1,16 +1,86 @@
 import { createFileRoute } from "@tanstack/react-router";
+import beforeAsset from "../assets/before.jpg.asset.json";
+import afterAsset from "../assets/after.jpg.asset.json";
+
 
 const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Krishna's Dant Ayush — Trusted Family Dental Clinic in Madhapur, Hyderabad</title>
-<meta name="description" content="Krishna's Dant Ayush is a family dental clinic in Madhapur, Hyderabad offering gentle, modern dental care — checkups, root canals, implants, braces, kids dentistry and more. Book on WhatsApp." />
-<meta property="og:title" content="Krishna's Dant Ayush — Family Dental Clinic in Madhapur" />
-<meta property="og:description" content="Gentle dental care rooted in trust. Madhapur, Hyderabad. Book on WhatsApp: +91 70133 38012." />
+<title>Best Dental Clinic in Madhapur, Hyderabad | Krishna's Dant Ayush</title>
+<meta name="description" content="Krishna's Dant Ayush — top-rated family dental clinic in Madhapur, Hyderabad. Root canal, implants, braces, teeth whitening, kids dentistry & more. Book on WhatsApp: +91 70133 38012." />
+<meta name="keywords" content="dental clinic Madhapur, dentist Hyderabad, best dentist Madhapur, root canal Madhapur, dental implants Hyderabad, teeth whitening Madhapur, kids dentist Hyderabad, orthodontist Madhapur, Tulasi Nagar dentist, Krishna's Dant Ayush" />
+<meta name="author" content="Krishna's Dant Ayush" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://krishnasdantayush.lovable.app/" />
+<meta name="geo.region" content="IN-TG" />
+<meta name="geo.placename" content="Madhapur, Hyderabad" />
+<meta name="geo.position" content="17.4483;78.3915" />
+<meta name="ICBM" content="17.4483, 78.3915" />
+<meta property="og:title" content="Krishna's Dant Ayush — Best Dental Clinic in Madhapur, Hyderabad" />
+<meta property="og:description" content="Gentle, modern dental care in Madhapur. Root canals, implants, braces, kids dentistry. Book on WhatsApp: +91 70133 38012." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://krishnasdantayush.lovable.app/" />
+<meta property="og:locale" content="en_IN" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Krishna's Dant Ayush — Dental Clinic in Madhapur" />
+<meta name="twitter:description" content="Trusted family dentist in Madhapur, Hyderabad. Book on WhatsApp." />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Krishna's Dant Ayush",
+  "image": "https://krishnasdantayush.lovable.app/og.jpg",
+  "url": "https://krishnasdantayush.lovable.app/",
+  "telephone": "+917013338012",
+  "priceRange": "₹₹",
+  "description": "Family dental clinic in Madhapur, Hyderabad offering root canal, dental implants, braces, teeth whitening, kids dentistry, oral surgery and periodontics.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Parvatha Nagar Temple Road, Tulasi Nagar, Madhapur",
+    "addressLocality": "Hyderabad",
+    "addressRegion": "Telangana",
+    "postalCode": "500081",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 17.4483,
+    "longitude": 78.3915
+  },
+  "hasMap": "https://maps.app.goo.gl/sDeJqhEZEUfAokdV8",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "10:00",
+    "closes": "20:30"
+  }],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150"
+  },
+  "areaServed": [
+    {"@type":"Place","name":"Madhapur"},
+    {"@type":"Place","name":"HITEC City"},
+    {"@type":"Place","name":"Kondapur"},
+    {"@type":"Place","name":"Gachibowli"},
+    {"@type":"Place","name":"Jubilee Hills"},
+    {"@type":"Place","name":"Hyderabad"}
+  ],
+  "medicalSpecialty": ["Dentistry","Periodontics","OralAndMaxillofacialSurgery"],
+  "sameAs": ["https://maps.app.goo.gl/sDeJqhEZEUfAokdV8"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Krishna's Dant Ayush",
+  "url":"https://krishnasdantayush.lovable.app/"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -86,10 +156,10 @@ img{max-width:100%;display:block}
 .icon-call svg{width:18px;height:18px}
 .hamburger{display:none;background:none;border:none;width:42px;height:42px;cursor:pointer;color:var(--ink)}
 .hamburger svg{width:24px;height:24px}
-.mobile-menu{display:none;position:fixed;inset:72px 0 0 0;background:var(--bg);padding:32px 22px;flex-direction:column;gap:8px;z-index:99;overflow-y:auto}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:var(--bg);padding:20px 22px calc(120px + env(safe-area-inset-bottom,0px));flex-direction:column;gap:8px;z-index:99;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .mobile-menu.open{display:flex;animation:fadeIn .25s ease}
-.mobile-menu a{padding:16px 18px;border-radius:12px;background:#fff;font-weight:500;border:1px solid var(--line)}
-.mobile-menu .btn{margin-top:12px;justify-content:center}
+.mobile-menu a{padding:14px 18px;border-radius:12px;background:#fff;font-weight:500;border:1px solid var(--line);font-size:.98rem}
+.mobile-menu .btn{margin-top:10px;justify-content:center}
 
 @keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
 
@@ -686,7 +756,7 @@ img{max-width:100%;display:block}
       <p>A before-and-after moment from one of our patients. Drag the slider to see the transformation.</p>
     </div>
     <div class="gallery-grid gallery-single">
-      ${ba("Smile Restoration","Cosmetic reshaping — completed in-clinic","","")}
+      ${ba("Smile Restoration","Reshaped and restored — completed in-clinic",beforeAsset.url,afterAsset.url)}
     </div>
     <p class="gallery-note reveal">Every photo shared with the patient's consent. Individual results vary — we'll walk you through realistic expectations at your consultation.</p>
   </div>

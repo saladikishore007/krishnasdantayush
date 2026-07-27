@@ -235,6 +235,7 @@ img{max-width:100%;display:block}
 /* Gallery */
 .gallery{background:linear-gradient(180deg,#f2ece0 0%,var(--bg) 100%)}
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.gallery-single{max-width:640px;margin:0 auto}
 .ba-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .3s ease,box-shadow .3s ease}
 .ba-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
 .ba-slider{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:ew-resize;user-select:none;background:#eee}
@@ -250,6 +251,61 @@ img{max-width:100%;display:block}
 .ba-caption h3{font-size:1.02rem;font-weight:600;margin-bottom:4px}
 .ba-caption p{font-size:.88rem;color:var(--muted)}
 .gallery-note{text-align:center;margin-top:32px;font-size:.88rem;color:var(--muted)}
+
+/* Certifications */
+.certs{background:var(--bg)}
+.certs-viewport{position:relative;overflow:hidden;padding:4px 0 8px}
+.certs-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 4px 20px;-webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab}
+.certs-track:active{cursor:grabbing}
+.certs-track::-webkit-scrollbar{display:none}
+.cert-card{flex:0 0 calc((100% - 44px)/2.4);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .3s ease,box-shadow .3s ease;display:flex;flex-direction:column}
+.cert-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.cert-img{aspect-ratio:3/4;overflow:hidden;background:#f4ecd8}
+.cert-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.cert-caption{padding:16px 18px}
+.cert-caption h4{font-family:'Outfit',sans-serif;font-size:.98rem;font-weight:600;margin-bottom:4px;color:var(--ink)}
+.cert-caption p{font-size:.83rem;color:var(--muted);line-height:1.5}
+.certs-actions{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:22px}
+.certs-dots{display:flex;gap:8px}
+.certs-dots button{width:9px;height:9px;border-radius:50%;background:var(--line);border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s}
+.certs-dots button.active{background:var(--primary);transform:scale(1.3)}
+@media (max-width:960px){.cert-card{flex-basis:calc((100% - 22px)/1.6)}}
+@media (max-width:640px){.cert-card{flex-basis:86%}}
+
+/* Chatbot */
+.chatbot-fab{position:fixed;bottom:22px;right:94px;width:60px;height:60px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px rgba(13,43,46,.35);z-index:98;transition:transform .2s,background .2s;border:none;cursor:pointer}
+.chatbot-fab:hover{transform:scale(1.08);background:var(--primary-2)}
+.chatbot-fab svg{width:28px;height:28px}
+.chatbot-fab .cb-badge{position:absolute;top:-2px;right:-2px;width:14px;height:14px;border-radius:50%;background:var(--gold);border:2px solid var(--bg)}
+.chatbot-panel{position:fixed;bottom:94px;right:22px;width:360px;max-width:calc(100vw - 44px);height:520px;max-height:calc(100vh - 130px);background:#fff;border-radius:20px;box-shadow:0 30px 60px -15px rgba(13,43,46,.35);z-index:99;display:none;flex-direction:column;overflow:hidden;border:1px solid var(--line);transform-origin:bottom right;animation:cbPop .25s ease}
+.chatbot-panel.open{display:flex}
+@keyframes cbPop{from{opacity:0;transform:scale(.9) translateY(10px)}to{opacity:1;transform:none}}
+.cb-header{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;padding:16px 18px;display:flex;align-items:center;gap:12px}
+.cb-header .cb-avatar{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.15);display:grid;place-items:center;flex-shrink:0}
+.cb-header .cb-avatar svg{width:22px;height:22px}
+.cb-header h4{font-family:'Outfit',sans-serif;font-size:1rem;color:#fff;margin:0;line-height:1.2}
+.cb-header small{font-size:.75rem;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:6px}
+.cb-header small::before{content:"";width:7px;height:7px;border-radius:50%;background:#4ade80;display:inline-block}
+.cb-close{margin-left:auto;background:rgba(255,255,255,.15);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;display:grid;place-items:center}
+.cb-close:hover{background:rgba(255,255,255,.25)}
+.cb-close svg{width:16px;height:16px}
+.cb-messages{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+.cb-msg{max-width:82%;padding:10px 14px;border-radius:14px;font-size:.9rem;line-height:1.5;animation:cbIn .25s ease;white-space:pre-line}
+@keyframes cbIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.cb-msg.bot{background:#fff;border:1px solid var(--line);color:var(--ink);border-bottom-left-radius:4px;align-self:flex-start}
+.cb-msg.user{background:var(--primary);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.cb-msg a{color:var(--primary);text-decoration:underline;font-weight:600}
+.cb-msg.user a{color:#fff}
+.cb-chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 18px 10px;background:var(--bg)}
+.cb-chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.78rem;color:var(--primary);cursor:pointer;font-family:inherit;transition:all .2s}
+.cb-chip:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+.cb-input{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:#fff}
+.cb-input input{flex:1;padding:10px 14px;border:1px solid var(--line);border-radius:999px;font-family:inherit;font-size:.9rem;background:var(--bg);outline:none;color:var(--ink)}
+.cb-input input:focus{border-color:var(--primary);background:#fff}
+.cb-input button{width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;border:none;cursor:pointer;display:grid;place-items:center;flex-shrink:0}
+.cb-input button:hover{background:var(--primary-2)}
+.cb-input svg{width:18px;height:18px}
+@media (max-width:520px){.chatbot-panel{right:12px;bottom:88px;width:calc(100vw - 24px);height:70vh}.chatbot-fab{right:88px;width:54px;height:54px}}
 
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
@@ -627,17 +683,38 @@ img{max-width:100%;display:block}
     <div class="section-head center reveal">
       <span class="eyebrow">Patient Gallery</span>
       <h2>Real smiles, real results.</h2>
-      <p>A few before-and-after moments from our patients. Drag the slider on each photo to see the transformation.</p>
+      <p>A before-and-after moment from one of our patients. Drag the slider to see the transformation.</p>
     </div>
-    <div class="gallery-grid">
-      ${ba("Smile Makeover","Veneers & whitening — 2 sittings","https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=800&q=70")}
-      ${ba("Teeth Whitening","In-clinic whitening — single visit","https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1581585504841-1cd0d3b6c9b4?auto=format&fit=crop&w=800&q=70")}
-      ${ba("Invisible Aligners","14-month clear aligner plan","https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1626202373070-73ee45c5c15e?auto=format&fit=crop&w=800&q=70")}
-      ${ba("Chipped Tooth Repair","Composite bonding — 45 minutes","https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=800&q=70")}
-      ${ba("Dental Implant","Single-tooth implant + crown","https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=70")}
-      ${ba("Scaling & Polishing","Deep cleaning — routine visit","https://images.unsplash.com/photo-1616391182219-e080b4d1043a?auto=format&fit=crop&w=800&q=70","https://images.unsplash.com/photo-1595003500447-88d24ee5ed9d?auto=format&fit=crop&w=800&q=70")}
+    <div class="gallery-grid gallery-single">
+      ${ba("Smile Restoration","Cosmetic reshaping — completed in-clinic","","")}
     </div>
     <p class="gallery-note reveal">Every photo shared with the patient's consent. Individual results vary — we'll walk you through realistic expectations at your consultation.</p>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS & AWARDS ============ -->
+<section class="section certs" id="certifications">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Credentials You Can Trust</span>
+      <h2>Certifications &amp; Awards</h2>
+      <p>Formal training and recognitions earned by our clinical team over the years.</p>
+    </div>
+    <div class="certs-viewport reveal">
+      <div class="certs-track" id="certsTrack">
+        ${cert("/__l5e/assets-v1/1b3c413f-340f-4824-9d36-7e903112c8ca/cert-guru-implant.png","Dr. Guru Charan","CDE Certificate — Implant Dentistry, Al-Badar Rural Dental College")}
+        ${cert("/__l5e/assets-v1/e13371d6-0aab-4a7e-8a45-ab52071c35e5/cert-guru-mds.png","Dr. Guru Charan","MDS Degree — Rajiv Gandhi University of Health Sciences")}
+        ${cert("/__l5e/assets-v1/5bc3f228-e884-448c-9114-eb84852ae000/cert-monica-bds.png","Dr. Monica Bajaj","BDS Degree — Rajiv Gandhi University of Health Sciences")}
+        ${cert("/__l5e/assets-v1/07743fa0-8311-431d-96ce-82c28d1eae57/cert-guru-bds.png","Dr. Guru Charan","BDS Degree — Rajiv Gandhi University of Health Sciences")}
+      </div>
+      <div class="certs-actions">
+        <div class="arrows">
+          <button class="arrow" id="certPrev" aria-label="Previous certificate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button class="arrow" id="certNext" aria-label="Next certificate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+        <div class="certs-dots" id="certsDots"></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -826,6 +903,30 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
+<!-- Chatbot -->
+<button class="chatbot-fab" id="chatbotFab" aria-label="Open chat assistant">
+  <span class="cb-badge"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>
+</button>
+<div class="chatbot-panel" id="chatbotPanel" role="dialog" aria-label="Chat assistant">
+  <div class="cb-header">
+    <div class="cb-avatar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-3.5 0-6 2-6 5.5 0 2 .8 3.6 1.4 4.9.4.9.6 1.4.6 2.1v3.5c0 1.4.9 3 2 3 .9 0 1.2-1.2 1.5-2.6.3-1.5.4-2.4 1-2.4.5 0 .7 1 1 2.4.3 1.4.6 2.6 1.5 2.6 1.1 0 2-1.6 2-3v-3.5c0-.7.2-1.2.6-2.1C17.2 11.1 18 9.5 18 7.5 18 4 15.5 2 12 2Z"/></svg>
+    </div>
+    <div>
+      <h4>Dant Ayush Assistant</h4>
+      <small>Online now</small>
+    </div>
+    <button class="cb-close" id="chatbotClose" aria-label="Close chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="cb-messages" id="cbMessages"></div>
+  <div class="cb-chips" id="cbChips"></div>
+  <form class="cb-input" id="cbForm" autocomplete="off">
+    <input type="text" id="cbInput" placeholder="Ask about services, timings, fees..." aria-label="Your message"/>
+    <button type="submit" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+  </form>
+</div>
+
 <!-- Floating WhatsApp -->
 <a href="https://wa.me/917013338012" target="_blank" rel="noopener" class="fab" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.2.8.8-3.1-.2-.3C3.8 15 3.4 13.5 3.4 12c0-4.7 3.9-8.6 8.6-8.6s8.6 3.9 8.6 8.6-3.9 8.3-8.6 8.3z"/></svg>
@@ -961,6 +1062,136 @@ function handleFeedback(e){
   document.getElementById('thankyou').classList.add('show');
   return isNetlify;
 }
+
+// Certifications carousel (drag/swipe + arrows + dots)
+(function(){
+  const track = document.getElementById('certsTrack');
+  if (!track) return;
+  const prev = document.getElementById('certPrev');
+  const next = document.getElementById('certNext');
+  const dotsWrap = document.getElementById('certsDots');
+  const cards = track.querySelectorAll('.cert-card');
+  const step = () => (cards[0] ? cards[0].getBoundingClientRect().width + 22 : 300);
+  prev.addEventListener('click', () => track.scrollBy({left:-step(), behavior:'smooth'}));
+  next.addEventListener('click', () => track.scrollBy({left: step(), behavior:'smooth'}));
+  // dots
+  cards.forEach((_,i) => {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label','Go to certificate '+(i+1));
+    b.addEventListener('click', () => track.scrollTo({left: i * step(), behavior:'smooth'}));
+    dotsWrap.appendChild(b);
+  });
+  const updateDots = () => {
+    const idx = Math.round(track.scrollLeft / step());
+    dotsWrap.querySelectorAll('button').forEach((d,i) => d.classList.toggle('active', i===idx));
+  };
+  track.addEventListener('scroll', updateDots, {passive:true});
+  updateDots();
+  // drag to swipe (mouse)
+  let isDown=false, startX=0, startScroll=0;
+  track.addEventListener('mousedown', e => { isDown=true; startX=e.pageX; startScroll=track.scrollLeft; });
+  window.addEventListener('mouseup', () => isDown=false);
+  window.addEventListener('mousemove', e => { if(!isDown) return; e.preventDefault(); track.scrollLeft = startScroll - (e.pageX - startX); });
+})();
+
+// AI chatbot (rule-based FAQ)
+(function(){
+  const fab = document.getElementById('chatbotFab');
+  const panel = document.getElementById('chatbotPanel');
+  const closeBtn = document.getElementById('chatbotClose');
+  const messages = document.getElementById('cbMessages');
+  const chips = document.getElementById('cbChips');
+  const form = document.getElementById('cbForm');
+  const input = document.getElementById('cbInput');
+  const waLink = '<a href="https://wa.me/917013338012" target="_blank" rel="noopener">+91 70133 38012</a>';
+  const escapeHTML = (s) => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[c]));
+  const addMsg = (text, who) => {
+    const el = document.createElement('div');
+    el.className = 'cb-msg ' + who;
+    el.innerHTML = who === 'user' ? escapeHTML(text) : text;
+    messages.appendChild(el);
+    messages.scrollTop = messages.scrollHeight;
+  };
+  const rules = [
+    { k:['hour','time','timing','open','close','when','sunday','holiday','working'],
+      a: "We're open <b>Monday to Saturday, 10:00 AM – 8:30 PM</b>. Closed on Sundays." },
+    { k:['fee','fees','cost','price','consult','consultation','op','charge','charges'],
+      a: "Our consultation / OP fee is <b>₹350</b>. Treatment costs are shared transparently after your check-up — no surprises." },
+    { k:['doctor','dentist','who','team','specialist','monica','guru','charan','bajaj','periodont','surgeon','maxillofacial'],
+      a: "You'll be cared for by:<br/>• <b>Dr. Monica Bajaj</b> (BDS, MDS — Periodontist)<br/>• <b>Dr. Guru Charan</b> (BDS, MDS — Oral &amp; Maxillofacial Surgeon)" },
+    { k:['service','treatment','offer','what do you','procedures','list'],
+      a: "We offer 14 treatments: Root Canal, Teeth Whitening, Scaling &amp; Root Planing, Gum Surgery, Crowns &amp; Bridges, Dental Implants, Tooth-Colored Fillings, Partial &amp; Complete Dentures, Wisdom Tooth Removal, Alignment of Misplaced Teeth, Teeth Aligners, Tooth Jewellery, Elderly Patient Care, and Kids' Treatment." },
+    { k:['root canal','rct'], a: "Yes, we do <b>Root Canal Treatments</b> — modern, virtually painless, usually completed in 1–2 sittings." },
+    { k:['whitening','bleach','yellow'], a: "Yes — in-clinic <b>Teeth Whitening</b> is available and gives visible results in a single visit." },
+    { k:['implant'], a: "Yes, we place <b>Dental Implants</b>. Dr. Guru Charan is trained in Implant Dentistry (CDE, Al-Badar) and Oral &amp; Maxillofacial Surgery." },
+    { k:['brace','aligner','align','crooked','straighten','invisible'], a: "We offer both <b>Teeth Aligners</b> (clear aligners) and traditional alignment of misplaced teeth. Consult us to see what suits you best." },
+    { k:['wisdom','extract','remove','pull'], a: "Yes — <b>Wisdom Tooth Removal</b> and extractions are performed by our oral surgeon in-house." },
+    { k:['gum','bleed','swollen','periodont','scaling','cleaning','polish'], a: "Absolutely. <b>Scaling &amp; Root Planing</b> and <b>Gum Surgery</b> are handled by our periodontist Dr. Monica Bajaj." },
+    { k:['crown','bridge','cap'], a: "Yes, we offer <b>Crowns &amp; Bridges</b> to restore broken, discolored, or missing teeth." },
+    { k:['filling','cavity','decay'], a: "Yes — <b>Tooth-Colored Fillings</b> that blend naturally with your tooth." },
+    { k:['denture'], a: "Yes, both <b>Partial and Complete Dentures</b> are made in-clinic for a comfortable fit." },
+    { k:['jewel','jewellery','decor'], a: "Yes! <b>Tooth Jewellery</b> is a quick, painless cosmetic add-on we offer." },
+    { k:['kid','child','baby','pediatric','pedodont'], a: "Yes, we have dedicated <b>Kids' Treatment</b> — gentle, unhurried, and geared to make little patients comfortable." },
+    { k:['elder','senior','old age','geriatric'], a: "Yes — <b>Elderly Patient Care</b> is one of our specialties, including dentures, gum care, and gentle procedures." },
+    { k:['location','address','where','reach','directions','madhapur','tulasi','parvatha'],
+      a: 'We are at <b>Parvatha Nagar Temple Road, Tulasi Nagar, Madhapur, Hyderabad, Telangana 500081</b>. <a href="https://maps.app.goo.gl/sDeJqhEZEUfAokdV8" target="_blank" rel="noopener">Open in Google Maps</a>.' },
+    { k:['contact','phone','call','number','whatsapp','reach out'],
+      a: "You can call or WhatsApp us at " + waLink + "." },
+    { k:['book','appointment','schedule','slot','reserve'],
+      a: 'You can book instantly on <a href="https://wa.me/917013338012" target="_blank" rel="noopener">WhatsApp</a> or call ' + waLink + '. Same-day slots are often available.' },
+    { k:['park','parking','vehicle','car','bike'],
+      a: "Free <b>two-wheeler parking</b> is available right outside. <b>Car parking</b> is available on the temple road." },
+    { k:['pain','painless','hurt','anaesthesia','anesthesia','numb','scared','afraid'],
+      a: "You're in safe hands. We use <b>modern local anaesthesia</b> and minimally invasive techniques — most patients feel nothing at all during treatment." },
+    { k:['emi','payment plan','installment','instalment','finance','plan'],
+      a: "Yes — we offer <b>flexible EMI / payment plans</b> for larger treatments like implants, braces and smile makeovers. Ask us at your consultation." },
+    { k:['walk in','walk-in','walkin','without appointment','emergency'],
+      a: "Walk-ins are accommodated when possible, but WhatsApp booking is recommended to avoid waiting. <b>Emergencies are always fitted in</b> — just call " + waLink + "." },
+    { k:['rating','review','google','star'],
+      a: "We're rated <b>4.9 / 5 on Google</b> with <b>150+ reviews</b> from our patients. Thank you for the love ❤️" },
+    { k:['hi','hello','hey','namaste','good morning','good evening','good afternoon'],
+      a: "Hi there! 👋 How can I help you today — services, timings, fees, or booking?" },
+    { k:['thank','thanks','thx'], a: "You're most welcome! Anything else I can help with?" },
+    { k:['bye','goodbye','see you'], a: "Take care! We're here on WhatsApp anytime at " + waLink + "." },
+  ];
+  const fallback = "I don't have that detail handy — please call or WhatsApp us at " + waLink + " and our team will help right away.";
+  const answer = (q) => {
+    const t = q.toLowerCase();
+    for (const r of rules) if (r.k.some(k => t.indexOf(k) !== -1)) return r.a;
+    return fallback;
+  };
+  const quickChips = ['Timings', 'Consultation fee', 'Doctors', 'Book appointment', 'Location', 'Parking'];
+  const renderChips = () => {
+    chips.innerHTML = '';
+    quickChips.forEach(label => {
+      const b = document.createElement('button');
+      b.className = 'cb-chip';
+      b.type = 'button';
+      b.textContent = label;
+      b.addEventListener('click', () => { handleUser(label); });
+      chips.appendChild(b);
+    });
+  };
+  const handleUser = (text) => {
+    if (!text.trim()) return;
+    addMsg(text, 'user');
+    input.value = '';
+    setTimeout(() => addMsg(answer(text), 'bot'), 350);
+  };
+  let opened = false;
+  const openPanel = () => {
+    panel.classList.add('open');
+    if (!opened) {
+      opened = true;
+      addMsg("Hi! I'm here to help with any questions about Krishna's Dant Ayush. Ask me about our services, doctors, timings, or fees.", 'bot');
+      renderChips();
+    }
+    setTimeout(() => input.focus(), 200);
+  };
+  fab.addEventListener('click', () => panel.classList.contains('open') ? panel.classList.remove('open') : openPanel());
+  closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+  form.addEventListener('submit', (e) => { e.preventDefault(); handleUser(input.value); });
+})();
 </script>
 
 </body>
@@ -998,7 +1229,13 @@ function faq(q: string, a: string) {
   return `<div class="faq-item"><button class="faq-q">${q}<span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button><div class="faq-a"><div class="a-inner faq-a-inner">${a}</div></div></div>`;
 }
 function ba(title: string, desc: string, before: string, after: string) {
-  return `<div class="ba-card reveal"><div class="ba-slider" data-ba><img class="ba-before" src="${before}" alt="${title} before" loading="lazy"/><div class="after-wrap"><img class="ba-after" src="${after}" alt="${title} after" loading="lazy"/></div><span class="ba-tag before">Before</span><span class="ba-tag after">After</span><div class="ba-handle"></div></div><div class="ba-caption"><h3>${title}</h3><p>${desc}</p></div></div>`;
+  const placeholder = (label: string) => `<div style="position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,#e8eae4,#f4ecd8);color:#6b7f82;font-family:'Outfit',sans-serif;font-size:.95rem;text-align:center;padding:20px;pointer-events:none"><div><div style="font-size:2rem;margin-bottom:6px;opacity:.4">📷</div><div style="font-weight:600;color:#0f3d3e">${label} photo</div><div style="font-size:.8rem;color:#6b7f82;margin-top:4px">Coming soon</div></div></div>`;
+  const beforeImg = before ? `<img class="ba-before" src="${before}" alt="${title} before" loading="lazy"/>` : placeholder("Before");
+  const afterImg = after ? `<img class="ba-after" src="${after}" alt="${title} after" loading="lazy"/>` : `<div class="ba-after" style="width:200%;height:100%;position:relative">${placeholder("After")}</div>`;
+  return `<div class="ba-card reveal"><div class="ba-slider" data-ba>${beforeImg}<div class="after-wrap">${afterImg}</div><span class="ba-tag before">Before</span><span class="ba-tag after">After</span><div class="ba-handle"></div></div><div class="ba-caption"><h3>${title}</h3><p>${desc}</p></div></div>`;
+}
+function cert(src: string, name: string, desc: string) {
+  return `<div class="cert-card reveal"><div class="cert-img"><img src="${src}" alt="${name} — ${desc}" loading="lazy" draggable="false"/></div><div class="cert-caption"><h4>${name}</h4><p>${desc}</p></div></div>`;
 }
 
 export const Route = createFileRoute("/")({

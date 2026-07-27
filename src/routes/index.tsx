@@ -8,12 +8,79 @@ const html = `<!DOCTYPE html>
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Krishna's Dant Ayush — Trusted Family Dental Clinic in Madhapur, Hyderabad</title>
-<meta name="description" content="Krishna's Dant Ayush is a family dental clinic in Madhapur, Hyderabad offering gentle, modern dental care — checkups, root canals, implants, braces, kids dentistry and more. Book on WhatsApp." />
-<meta property="og:title" content="Krishna's Dant Ayush — Family Dental Clinic in Madhapur" />
-<meta property="og:description" content="Gentle dental care rooted in trust. Madhapur, Hyderabad. Book on WhatsApp: +91 70133 38012." />
+<title>Best Dental Clinic in Madhapur, Hyderabad | Krishna's Dant Ayush</title>
+<meta name="description" content="Krishna's Dant Ayush — top-rated family dental clinic in Madhapur, Hyderabad. Root canal, implants, braces, teeth whitening, kids dentistry & more. Book on WhatsApp: +91 70133 38012." />
+<meta name="keywords" content="dental clinic Madhapur, dentist Hyderabad, best dentist Madhapur, root canal Madhapur, dental implants Hyderabad, teeth whitening Madhapur, kids dentist Hyderabad, orthodontist Madhapur, Tulasi Nagar dentist, Krishna's Dant Ayush" />
+<meta name="author" content="Krishna's Dant Ayush" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://krishnasdantayush.lovable.app/" />
+<meta name="geo.region" content="IN-TG" />
+<meta name="geo.placename" content="Madhapur, Hyderabad" />
+<meta name="geo.position" content="17.4483;78.3915" />
+<meta name="ICBM" content="17.4483, 78.3915" />
+<meta property="og:title" content="Krishna's Dant Ayush — Best Dental Clinic in Madhapur, Hyderabad" />
+<meta property="og:description" content="Gentle, modern dental care in Madhapur. Root canals, implants, braces, kids dentistry. Book on WhatsApp: +91 70133 38012." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://krishnasdantayush.lovable.app/" />
+<meta property="og:locale" content="en_IN" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Krishna's Dant Ayush — Dental Clinic in Madhapur" />
+<meta name="twitter:description" content="Trusted family dentist in Madhapur, Hyderabad. Book on WhatsApp." />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Krishna's Dant Ayush",
+  "image": "https://krishnasdantayush.lovable.app/og.jpg",
+  "url": "https://krishnasdantayush.lovable.app/",
+  "telephone": "+917013338012",
+  "priceRange": "₹₹",
+  "description": "Family dental clinic in Madhapur, Hyderabad offering root canal, dental implants, braces, teeth whitening, kids dentistry, oral surgery and periodontics.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Parvatha Nagar Temple Road, Tulasi Nagar, Madhapur",
+    "addressLocality": "Hyderabad",
+    "addressRegion": "Telangana",
+    "postalCode": "500081",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 17.4483,
+    "longitude": 78.3915
+  },
+  "hasMap": "https://maps.app.goo.gl/sDeJqhEZEUfAokdV8",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "10:00",
+    "closes": "20:30"
+  }],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "150"
+  },
+  "areaServed": [
+    {"@type":"Place","name":"Madhapur"},
+    {"@type":"Place","name":"HITEC City"},
+    {"@type":"Place","name":"Kondapur"},
+    {"@type":"Place","name":"Gachibowli"},
+    {"@type":"Place","name":"Jubilee Hills"},
+    {"@type":"Place","name":"Hyderabad"}
+  ],
+  "medicalSpecialty": ["Dentistry","Periodontics","OralAndMaxillofacialSurgery"],
+  "sameAs": ["https://maps.app.goo.gl/sDeJqhEZEUfAokdV8"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Krishna's Dant Ayush",
+  "url":"https://krishnasdantayush.lovable.app/"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />

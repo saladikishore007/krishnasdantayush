@@ -689,7 +689,7 @@ img{max-width:100%;display:block}
       <p>A before-and-after moment from one of our patients. Drag the slider to see the transformation.</p>
     </div>
     <div class="gallery-grid gallery-single">
-      ${ba("Smile Restoration","Cosmetic reshaping — completed in-clinic","","")}
+      ${ba("Smile Restoration","Reshaped and restored — completed in-clinic",beforeAsset.url,afterAsset.url)}
     </div>
     <p class="gallery-note reveal">Every photo shared with the patient's consent. Individual results vary — we'll walk you through realistic expectations at your consultation.</p>
   </div>

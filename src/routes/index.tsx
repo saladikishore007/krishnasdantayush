@@ -903,6 +903,30 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
+<!-- Chatbot -->
+<button class="chatbot-fab" id="chatbotFab" aria-label="Open chat assistant">
+  <span class="cb-badge"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>
+</button>
+<div class="chatbot-panel" id="chatbotPanel" role="dialog" aria-label="Chat assistant">
+  <div class="cb-header">
+    <div class="cb-avatar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-3.5 0-6 2-6 5.5 0 2 .8 3.6 1.4 4.9.4.9.6 1.4.6 2.1v3.5c0 1.4.9 3 2 3 .9 0 1.2-1.2 1.5-2.6.3-1.5.4-2.4 1-2.4.5 0 .7 1 1 2.4.3 1.4.6 2.6 1.5 2.6 1.1 0 2-1.6 2-3v-3.5c0-.7.2-1.2.6-2.1C17.2 11.1 18 9.5 18 7.5 18 4 15.5 2 12 2Z"/></svg>
+    </div>
+    <div>
+      <h4>Dant Ayush Assistant</h4>
+      <small>Online now</small>
+    </div>
+    <button class="cb-close" id="chatbotClose" aria-label="Close chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <div class="cb-messages" id="cbMessages"></div>
+  <div class="cb-chips" id="cbChips"></div>
+  <form class="cb-input" id="cbForm" autocomplete="off">
+    <input type="text" id="cbInput" placeholder="Ask about services, timings, fees..." aria-label="Your message"/>
+    <button type="submit" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+  </form>
+</div>
+
 <!-- Floating WhatsApp -->
 <a href="https://wa.me/917013338012" target="_blank" rel="noopener" class="fab" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.2.8.8-3.1-.2-.3C3.8 15 3.4 13.5 3.4 12c0-4.7 3.9-8.6 8.6-8.6s8.6 3.9 8.6 8.6-3.9 8.3-8.6 8.3z"/></svg>

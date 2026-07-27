@@ -89,10 +89,10 @@ img{max-width:100%;display:block}
 .icon-call svg{width:18px;height:18px}
 .hamburger{display:none;background:none;border:none;width:42px;height:42px;cursor:pointer;color:var(--ink)}
 .hamburger svg{width:24px;height:24px}
-.mobile-menu{display:none;position:fixed;inset:72px 0 0 0;background:var(--bg);padding:32px 22px;flex-direction:column;gap:8px;z-index:99;overflow-y:auto}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:var(--bg);padding:20px 22px calc(120px + env(safe-area-inset-bottom,0px));flex-direction:column;gap:8px;z-index:99;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .mobile-menu.open{display:flex;animation:fadeIn .25s ease}
-.mobile-menu a{padding:16px 18px;border-radius:12px;background:#fff;font-weight:500;border:1px solid var(--line)}
-.mobile-menu .btn{margin-top:12px;justify-content:center}
+.mobile-menu a{padding:14px 18px;border-radius:12px;background:#fff;font-weight:500;border:1px solid var(--line);font-size:.98rem}
+.mobile-menu .btn{margin-top:10px;justify-content:center}
 
 @keyframes fadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
 

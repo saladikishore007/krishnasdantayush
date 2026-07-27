@@ -1062,6 +1062,136 @@ function handleFeedback(e){
   document.getElementById('thankyou').classList.add('show');
   return isNetlify;
 }
+
+// Certifications carousel (drag/swipe + arrows + dots)
+(function(){
+  const track = document.getElementById('certsTrack');
+  if (!track) return;
+  const prev = document.getElementById('certPrev');
+  const next = document.getElementById('certNext');
+  const dotsWrap = document.getElementById('certsDots');
+  const cards = track.querySelectorAll('.cert-card');
+  const step = () => (cards[0] ? cards[0].getBoundingClientRect().width + 22 : 300);
+  prev.addEventListener('click', () => track.scrollBy({left:-step(), behavior:'smooth'}));
+  next.addEventListener('click', () => track.scrollBy({left: step(), behavior:'smooth'}));
+  // dots
+  cards.forEach((_,i) => {
+    const b = document.createElement('button');
+    b.setAttribute('aria-label','Go to certificate '+(i+1));
+    b.addEventListener('click', () => track.scrollTo({left: i * step(), behavior:'smooth'}));
+    dotsWrap.appendChild(b);
+  });
+  const updateDots = () => {
+    const idx = Math.round(track.scrollLeft / step());
+    dotsWrap.querySelectorAll('button').forEach((d,i) => d.classList.toggle('active', i===idx));
+  };
+  track.addEventListener('scroll', updateDots, {passive:true});
+  updateDots();
+  // drag to swipe (mouse)
+  let isDown=false, startX=0, startScroll=0;
+  track.addEventListener('mousedown', e => { isDown=true; startX=e.pageX; startScroll=track.scrollLeft; });
+  window.addEventListener('mouseup', () => isDown=false);
+  window.addEventListener('mousemove', e => { if(!isDown) return; e.preventDefault(); track.scrollLeft = startScroll - (e.pageX - startX); });
+})();
+
+// AI chatbot (rule-based FAQ)
+(function(){
+  const fab = document.getElementById('chatbotFab');
+  const panel = document.getElementById('chatbotPanel');
+  const closeBtn = document.getElementById('chatbotClose');
+  const messages = document.getElementById('cbMessages');
+  const chips = document.getElementById('cbChips');
+  const form = document.getElementById('cbForm');
+  const input = document.getElementById('cbInput');
+  const waLink = '<a href="https://wa.me/917013338012" target="_blank" rel="noopener">+91 70133 38012</a>';
+  const escapeHTML = (s) => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[c]));
+  const addMsg = (text, who) => {
+    const el = document.createElement('div');
+    el.className = 'cb-msg ' + who;
+    el.innerHTML = who === 'user' ? escapeHTML(text) : text;
+    messages.appendChild(el);
+    messages.scrollTop = messages.scrollHeight;
+  };
+  const rules = [
+    { k:['hour','time','timing','open','close','when','sunday','holiday','working'],
+      a: "We're open <b>Monday to Saturday, 10:00 AM – 8:30 PM</b>. Closed on Sundays." },
+    { k:['fee','fees','cost','price','consult','consultation','op','charge','charges'],
+      a: "Our consultation / OP fee is <b>₹350</b>. Treatment costs are shared transparently after your check-up — no surprises." },
+    { k:['doctor','dentist','who','team','specialist','monica','guru','charan','bajaj','periodont','surgeon','maxillofacial'],
+      a: "You'll be cared for by:<br/>• <b>Dr. Monica Bajaj</b> (BDS, MDS — Periodontist)<br/>• <b>Dr. Guru Charan</b> (BDS, MDS — Oral &amp; Maxillofacial Surgeon)" },
+    { k:['service','treatment','offer','what do you','procedures','list'],
+      a: "We offer 14 treatments: Root Canal, Teeth Whitening, Scaling &amp; Root Planing, Gum Surgery, Crowns &amp; Bridges, Dental Implants, Tooth-Colored Fillings, Partial &amp; Complete Dentures, Wisdom Tooth Removal, Alignment of Misplaced Teeth, Teeth Aligners, Tooth Jewellery, Elderly Patient Care, and Kids' Treatment." },
+    { k:['root canal','rct'], a: "Yes, we do <b>Root Canal Treatments</b> — modern, virtually painless, usually completed in 1–2 sittings." },
+    { k:['whitening','bleach','yellow'], a: "Yes — in-clinic <b>Teeth Whitening</b> is available and gives visible results in a single visit." },
+    { k:['implant'], a: "Yes, we place <b>Dental Implants</b>. Dr. Guru Charan is trained in Implant Dentistry (CDE, Al-Badar) and Oral &amp; Maxillofacial Surgery." },
+    { k:['brace','aligner','align','crooked','straighten','invisible'], a: "We offer both <b>Teeth Aligners</b> (clear aligners) and traditional alignment of misplaced teeth. Consult us to see what suits you best." },
+    { k:['wisdom','extract','remove','pull'], a: "Yes — <b>Wisdom Tooth Removal</b> and extractions are performed by our oral surgeon in-house." },
+    { k:['gum','bleed','swollen','periodont','scaling','cleaning','polish'], a: "Absolutely. <b>Scaling &amp; Root Planing</b> and <b>Gum Surgery</b> are handled by our periodontist Dr. Monica Bajaj." },
+    { k:['crown','bridge','cap'], a: "Yes, we offer <b>Crowns &amp; Bridges</b> to restore broken, discolored, or missing teeth." },
+    { k:['filling','cavity','decay'], a: "Yes — <b>Tooth-Colored Fillings</b> that blend naturally with your tooth." },
+    { k:['denture'], a: "Yes, both <b>Partial and Complete Dentures</b> are made in-clinic for a comfortable fit." },
+    { k:['jewel','jewellery','decor'], a: "Yes! <b>Tooth Jewellery</b> is a quick, painless cosmetic add-on we offer." },
+    { k:['kid','child','baby','pediatric','pedodont'], a: "Yes, we have dedicated <b>Kids' Treatment</b> — gentle, unhurried, and geared to make little patients comfortable." },
+    { k:['elder','senior','old age','geriatric'], a: "Yes — <b>Elderly Patient Care</b> is one of our specialties, including dentures, gum care, and gentle procedures." },
+    { k:['location','address','where','reach','directions','madhapur','tulasi','parvatha'],
+      a: 'We are at <b>Parvatha Nagar Temple Road, Tulasi Nagar, Madhapur, Hyderabad, Telangana 500081</b>. <a href="https://maps.app.goo.gl/sDeJqhEZEUfAokdV8" target="_blank" rel="noopener">Open in Google Maps</a>.' },
+    { k:['contact','phone','call','number','whatsapp','reach out'],
+      a: "You can call or WhatsApp us at " + waLink + "." },
+    { k:['book','appointment','schedule','slot','reserve'],
+      a: 'You can book instantly on <a href="https://wa.me/917013338012" target="_blank" rel="noopener">WhatsApp</a> or call ' + waLink + '. Same-day slots are often available.' },
+    { k:['park','parking','vehicle','car','bike'],
+      a: "Free <b>two-wheeler parking</b> is available right outside. <b>Car parking</b> is available on the temple road." },
+    { k:['pain','painless','hurt','anaesthesia','anesthesia','numb','scared','afraid'],
+      a: "You're in safe hands. We use <b>modern local anaesthesia</b> and minimally invasive techniques — most patients feel nothing at all during treatment." },
+    { k:['emi','payment plan','installment','instalment','finance','plan'],
+      a: "Yes — we offer <b>flexible EMI / payment plans</b> for larger treatments like implants, braces and smile makeovers. Ask us at your consultation." },
+    { k:['walk in','walk-in','walkin','without appointment','emergency'],
+      a: "Walk-ins are accommodated when possible, but WhatsApp booking is recommended to avoid waiting. <b>Emergencies are always fitted in</b> — just call " + waLink + "." },
+    { k:['rating','review','google','star'],
+      a: "We're rated <b>4.9 / 5 on Google</b> with <b>150+ reviews</b> from our patients. Thank you for the love ❤️" },
+    { k:['hi','hello','hey','namaste','good morning','good evening','good afternoon'],
+      a: "Hi there! 👋 How can I help you today — services, timings, fees, or booking?" },
+    { k:['thank','thanks','thx'], a: "You're most welcome! Anything else I can help with?" },
+    { k:['bye','goodbye','see you'], a: "Take care! We're here on WhatsApp anytime at " + waLink + "." },
+  ];
+  const fallback = "I don't have that detail handy — please call or WhatsApp us at " + waLink + " and our team will help right away.";
+  const answer = (q) => {
+    const t = q.toLowerCase();
+    for (const r of rules) if (r.k.some(k => t.indexOf(k) !== -1)) return r.a;
+    return fallback;
+  };
+  const quickChips = ['Timings', 'Consultation fee', 'Doctors', 'Book appointment', 'Location', 'Parking'];
+  const renderChips = () => {
+    chips.innerHTML = '';
+    quickChips.forEach(label => {
+      const b = document.createElement('button');
+      b.className = 'cb-chip';
+      b.type = 'button';
+      b.textContent = label;
+      b.addEventListener('click', () => { handleUser(label); });
+      chips.appendChild(b);
+    });
+  };
+  const handleUser = (text) => {
+    if (!text.trim()) return;
+    addMsg(text, 'user');
+    input.value = '';
+    setTimeout(() => addMsg(answer(text), 'bot'), 350);
+  };
+  let opened = false;
+  const openPanel = () => {
+    panel.classList.add('open');
+    if (!opened) {
+      opened = true;
+      addMsg("Hi! I'm here to help with any questions about Krishna's Dant Ayush. Ask me about our services, doctors, timings, or fees.", 'bot');
+      renderChips();
+    }
+    setTimeout(() => input.focus(), 200);
+  };
+  fab.addEventListener('click', () => panel.classList.contains('open') ? panel.classList.remove('open') : openPanel());
+  closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+  form.addEventListener('submit', (e) => { e.preventDefault(); handleUser(input.value); });
+})();
 </script>
 
 </body>

@@ -74,6 +74,7 @@ img{max-width:100%;display:block}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:18px}
 .brand{display:flex;align-items:center;gap:10px;font-family:'Outfit',sans-serif;font-weight:700;color:var(--primary);font-size:1.1rem;line-height:1.1}
 .brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-2));display:grid;place-items:center;color:#fff;font-weight:700;font-family:'Outfit';box-shadow:var(--shadow-sm)}
+.brand-mark svg{width:22px;height:22px}
 .brand small{display:block;font-size:.7rem;color:var(--muted);font-weight:500;letter-spacing:.1em;text-transform:uppercase}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a{font-size:.95rem;color:var(--ink);font-weight:500;position:relative;padding:6px 0}

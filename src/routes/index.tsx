@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import beforeAsset from "../assets/before.jpg.asset.json";
-import afterAsset from "../assets/after.jpg.asset.json";
+import beforeImg from "../assets/images/before.png";
+import afterImg from "../assets/images/after.png";
+import drMonicaImg from "../assets/images/dr-monica.png";
+import drGuruImg from "../assets/images/dr-guru.png";
+import certGuruImplant from "../assets/images/cert-guru-implant.png";
+import certGuruMds from "../assets/images/cert-guru-mds.png";
+import certMonicaBds from "../assets/images/cert-monica-bds.png";
+import certGuruBds from "../assets/images/cert-guru-bds.png";
 
 
 const html = `<!DOCTYPE html>
@@ -310,8 +316,8 @@ img{max-width:100%;display:block}
 .ba-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
 .ba-slider{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:ew-resize;user-select:none;background:#eee}
 .ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
-.ba-slider .after-wrap{position:absolute;inset:0;overflow:hidden;width:50%}
-.ba-slider .after-wrap img{width:calc(100%/0.5)}
+.ba-slider .after-wrap{position:absolute;top:0;right:0;bottom:0;overflow:hidden;width:50%}
+.ba-slider .after-wrap img{position:absolute;top:0;right:0;height:100%;width:calc(100%/0.5)}
 .ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15);transform:translateX(-50%);pointer-events:none}
 .ba-handle::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.25);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f3d3e' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='15 6 9 12 15 18'/><polyline points='9 6 15 12 9 18' transform='translate(6 0)'/></svg>");background-repeat:no-repeat;background-position:center;background-size:22px}
 .ba-tag{position:absolute;top:12px;padding:5px 12px;border-radius:999px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#fff;backdrop-filter:blur(6px);pointer-events:none}
@@ -630,7 +636,7 @@ img{max-width:100%;display:block}
       </div>
       <div class="doctors-grid">
         <div class="doctor-card reveal">
-          <img class="doctor-photo" src="/__l5e/assets-v1/1159508d-a357-4f3c-974a-3acc3f0d3293/dr-monica.jpg" alt="Dr. Monica Bajaj" loading="lazy" />
+          <img class="doctor-photo" src="${drMonicaImg}" alt="Dr. Monica Bajaj" loading="lazy" />
           <div class="doctor-info">
             <h4>Dr. Monica Bajaj</h4>
             <div class="doctor-quals">BDS, MDS</div>
@@ -638,7 +644,7 @@ img{max-width:100%;display:block}
           </div>
         </div>
         <div class="doctor-card reveal delay-1">
-          <img class="doctor-photo" src="/__l5e/assets-v1/f5cc6771-d142-4b4f-8b1c-2f1438fda6f9/dr-guru.png" alt="Dr. Guru Charan" loading="lazy" />
+          <img class="doctor-photo" src="${drGuruImg}" alt="Dr. Guru Charan" loading="lazy" />
           <div class="doctor-info">
             <h4>Dr. Guru Charan</h4>
             <div class="doctor-quals">BDS, MDS</div>
@@ -756,7 +762,7 @@ img{max-width:100%;display:block}
       <p>A before-and-after moment from one of our patients. Drag the slider to see the transformation.</p>
     </div>
     <div class="gallery-grid gallery-single">
-      ${ba("Smile Restoration","Reshaped and restored — completed in-clinic",beforeAsset.url,afterAsset.url)}
+      ${ba("Smile Restoration","Reshaped and restored — completed in-clinic",beforeImg,afterImg)}
     </div>
     <p class="gallery-note reveal">Every photo shared with the patient's consent. Individual results vary — we'll walk you through realistic expectations at your consultation.</p>
   </div>
@@ -772,10 +778,10 @@ img{max-width:100%;display:block}
     </div>
     <div class="certs-viewport reveal">
       <div class="certs-track" id="certsTrack">
-        ${cert("/__l5e/assets-v1/1b3c413f-340f-4824-9d36-7e903112c8ca/cert-guru-implant.png","Dr. Guru Charan","CDE Certificate — Implant Dentistry, Al-Badar Rural Dental College")}
-        ${cert("/__l5e/assets-v1/e13371d6-0aab-4a7e-8a45-ab52071c35e5/cert-guru-mds.png","Dr. Guru Charan","MDS Degree — Rajiv Gandhi University of Health Sciences")}
-        ${cert("/__l5e/assets-v1/5bc3f228-e884-448c-9114-eb84852ae000/cert-monica-bds.png","Dr. Monica Bajaj","BDS Degree — Rajiv Gandhi University of Health Sciences")}
-        ${cert("/__l5e/assets-v1/07743fa0-8311-431d-96ce-82c28d1eae57/cert-guru-bds.png","Dr. Guru Charan","BDS Degree — Rajiv Gandhi University of Health Sciences")}
+        ${cert(certGuruImplant,"Dr. Guru Charan","CDE Certificate — Implant Dentistry, Al-Badar Rural Dental College")}
+        ${cert(certGuruMds,"Dr. Guru Charan","MDS Degree — Rajiv Gandhi University of Health Sciences")}
+        ${cert(certMonicaBds,"Dr. Monica Bajaj","BDS Degree — Rajiv Gandhi University of Health Sciences")}
+        ${cert(certGuruBds,"Dr. Guru Charan","BDS Degree — Rajiv Gandhi University of Health Sciences")}
       </div>
       <div class="certs-actions">
         <div class="arrows">
@@ -1078,8 +1084,8 @@ document.querySelectorAll('[data-ba]').forEach(slider => {
     const rect = slider.getBoundingClientRect();
     let pct = ((clientX - rect.left) / rect.width) * 100;
     pct = Math.max(0, Math.min(100, pct));
-    afterWrap.style.width = pct + '%';
-    afterImg.style.width = (100 / (pct/100 || 0.0001)) + '%';
+    afterWrap.style.width = (100 - pct) + '%';
+    afterImg.style.width = (100 / ((100 - pct)/100 || 0.0001)) + '%';
     handle.style.left = pct + '%';
   };
   slider.addEventListener('mousedown', e => { dragging = true; setPos(e.clientX); });

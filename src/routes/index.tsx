@@ -702,10 +702,10 @@ img{max-width:100%;display:block}
     </div>
     <div class="certs-viewport reveal">
       <div class="certs-track" id="certsTrack">
-        ${cert("/__l5e/assets-v1/f6a-cert-guru-implant/cert-guru-implant.png","Dr. Guru Charan","CDE Certificate — Implant Dentistry, Al-Badar Rural Dental College")}
-        ${cert("/__l5e/assets-v1/f6a-cert-guru-mds/cert-guru-mds.png","Dr. Guru Charan","MDS Degree — Rajiv Gandhi University of Health Sciences")}
-        ${cert("/__l5e/assets-v1/f6a-cert-monica-bds/cert-monica-bds.png","Dr. Monica Bajaj","BDS Degree — Rajiv Gandhi University of Health Sciences")}
-        ${cert("/__l5e/assets-v1/f6a-cert-guru-bds/cert-guru-bds.png","Dr. Guru Charan","BDS Degree — Rajiv Gandhi University of Health Sciences")}
+        ${cert("/__l5e/assets-v1/1b3c413f-340f-4824-9d36-7e903112c8ca/cert-guru-implant.png","Dr. Guru Charan","CDE Certificate — Implant Dentistry, Al-Badar Rural Dental College")}
+        ${cert("/__l5e/assets-v1/e13371d6-0aab-4a7e-8a45-ab52071c35e5/cert-guru-mds.png","Dr. Guru Charan","MDS Degree — Rajiv Gandhi University of Health Sciences")}
+        ${cert("/__l5e/assets-v1/5bc3f228-e884-448c-9114-eb84852ae000/cert-monica-bds.png","Dr. Monica Bajaj","BDS Degree — Rajiv Gandhi University of Health Sciences")}
+        ${cert("/__l5e/assets-v1/07743fa0-8311-431d-96ce-82c28d1eae57/cert-guru-bds.png","Dr. Guru Charan","BDS Degree — Rajiv Gandhi University of Health Sciences")}
       </div>
       <div class="certs-actions">
         <div class="arrows">

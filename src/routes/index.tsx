@@ -319,7 +319,8 @@ img{max-width:100%;display:block}
   .nav-cta .btn-primary{padding:12px}
 }
 @media (max-width:520px){
-  .services-grid,.why-grid,.gallery-grid{grid-template-columns:1fr}
+  .services-grid,.why-grid,.gallery-grid,.doctors-grid{grid-template-columns:1fr}
+  .doctor-card{flex-direction:column;text-align:center;align-items:center}
   .form-row{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .review-card{flex-basis:82vw}

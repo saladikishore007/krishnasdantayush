@@ -134,6 +134,20 @@ img{max-width:100%;display:block}
 .value{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:.85rem;font-weight:500;color:var(--primary)}
 .value svg{width:16px;height:16px;color:var(--gold)}
 
+/* Doctors */
+.doctors{margin-top:64px}
+.doctors-head{max-width:680px;margin-bottom:28px}
+.doctors-head h3{font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.01em}
+.doctors-head p{font-size:1rem}
+.doctors-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.doctor-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;gap:20px;align-items:center;box-shadow:var(--shadow-sm);transition:transform .3s ease,box-shadow .3s ease,border-color .3s}
+.doctor-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:transparent}
+.doctor-photo{width:120px;height:120px;border-radius:20px;object-fit:cover;flex-shrink:0;background:var(--mint);border:2px solid #fff;box-shadow:var(--shadow-sm)}
+.doctor-info{min-width:0}
+.doctor-info h4{font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:4px;line-height:1.2}
+.doctor-quals{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px}
+.doctor-spec{font-size:.92rem;color:var(--ink-soft)}
+
 /* Services */
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .service-card{background:#fff;padding:28px 24px;border-radius:var(--radius);border:1px solid var(--line);transition:transform .3s ease,box-shadow .3s ease,border-color .3s;cursor:default}

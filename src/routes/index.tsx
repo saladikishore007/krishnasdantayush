@@ -1,4 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import beforeAsset from "../assets/before.jpg.asset.json";
+import afterAsset from "../assets/after.jpg.asset.json";
+
 
 const html = `<!DOCTYPE html>
 <html lang="en">

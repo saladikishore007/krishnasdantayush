@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import beforeImg from "../assets/images/before.png";
-import afterImg from "../assets/images/after.png";
-import drMonicaImg from "../assets/images/dr-monica.png";
-import drGuruImg from "../assets/images/dr-guru.png";
-import certGuruImplant from "../assets/images/cert-guru-implant.png";
-import certGuruMds from "../assets/images/cert-guru-mds.png";
-import certMonicaBds from "../assets/images/cert-monica-bds.png";
-import certGuruBds from "../assets/images/cert-guru-bds.png";
+const beforeImg = "/images/before.png";
+const afterImg = "/images/after.png";
+const drMonicaImg = "/images/dr-monica.png";
+const drGuruImg = "/images/dr-guru.png";
+const certGuruImplant = "/images/cert-guru-implant.png";
+const certGuruMds = "/images/cert-guru-mds.png";
+const certMonicaBds = "/images/cert-monica-bds.png";
+const certGuruBds = "/images/cert-guru-bds.png";
 
 
 const html = `<!DOCTYPE html>

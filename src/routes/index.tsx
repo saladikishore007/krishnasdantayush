@@ -74,6 +74,7 @@ img{max-width:100%;display:block}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:18px}
 .brand{display:flex;align-items:center;gap:10px;font-family:'Outfit',sans-serif;font-weight:700;color:var(--primary);font-size:1.1rem;line-height:1.1}
 .brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-2));display:grid;place-items:center;color:#fff;font-weight:700;font-family:'Outfit';box-shadow:var(--shadow-sm)}
+.brand-mark svg{width:22px;height:22px}
 .brand small{display:block;font-size:.7rem;color:var(--muted);font-weight:500;letter-spacing:.1em;text-transform:uppercase}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a{font-size:.95rem;color:var(--ink);font-weight:500;position:relative;padding:6px 0}
@@ -132,6 +133,20 @@ img{max-width:100%;display:block}
 .values{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
 .value{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:.85rem;font-weight:500;color:var(--primary)}
 .value svg{width:16px;height:16px;color:var(--gold)}
+
+/* Doctors */
+.doctors{margin-top:64px}
+.doctors-head{max-width:680px;margin-bottom:28px}
+.doctors-head h3{font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.01em}
+.doctors-head p{font-size:1rem}
+.doctors-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.doctor-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;gap:20px;align-items:center;box-shadow:var(--shadow-sm);transition:transform .3s ease,box-shadow .3s ease,border-color .3s}
+.doctor-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:transparent}
+.doctor-photo{width:120px;height:120px;border-radius:20px;object-fit:cover;flex-shrink:0;background:var(--mint);border:2px solid #fff;box-shadow:var(--shadow-sm)}
+.doctor-info{min-width:0}
+.doctor-info h4{font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:4px;line-height:1.2}
+.doctor-quals{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px}
+.doctor-spec{font-size:.92rem;color:var(--ink-soft)}
 
 /* Services */
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
@@ -304,7 +319,8 @@ img{max-width:100%;display:block}
   .nav-cta .btn-primary{padding:12px}
 }
 @media (max-width:520px){
-  .services-grid,.why-grid,.gallery-grid{grid-template-columns:1fr}
+  .services-grid,.why-grid,.gallery-grid,.doctors-grid{grid-template-columns:1fr}
+  .doctor-card{flex-direction:column;text-align:center;align-items:center}
   .form-row{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .review-card{flex-basis:82vw}
@@ -320,7 +336,7 @@ img{max-width:100%;display:block}
 <header class="header" id="header">
   <div class="container nav">
     <a href="#home" class="brand">
-      <div class="brand-mark">K</div>
+      <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-3.5 0-6 2-6 5.5 0 2 .8 3.6 1.4 4.9.4.9.6 1.4.6 2.1v3.5c0 1.4.9 3 2 3 .9 0 1.2-1.2 1.5-2.6.3-1.5.4-2.4 1-2.4.5 0 .7 1 1 2.4.3 1.4.6 2.6 1.5 2.6 1.1 0 2-1.6 2-3v-3.5c0-.7.2-1.2.6-2.1C17.2 11.1 18 9.5 18 7.5 18 4 15.5 2 12 2Z"/></svg></div>
       <div>
         Krishna's Dant Ayush
         <small>Dental Clinic</small>
@@ -437,9 +453,9 @@ img{max-width:100%;display:block}
 <!-- ============ TRUST BAR ============ -->
 <div class="trust-bar reveal">
   <div class="trust-inner">
-    <div class="stat"><span class="num" data-count="12">0</span><span style="color:var(--gold)">+</span><div class="label">Years of Experience</div></div>
-    <div class="stat"><span class="num" data-count="8500">0</span><span style="color:var(--gold)">+</span><div class="label">Happy Patients Treated</div></div>
-    <div class="stat"><span class="num" data-count="15">0</span><span style="color:var(--gold)">+</span><div class="label">Modern Treatments Offered</div></div>
+    <div class="stat"><span class="num" data-count="14">0</span><span style="color:var(--gold)">+</span><div class="label">Years of Experience</div></div>
+    <div class="stat"><span class="num" data-count="5271">0</span><span style="color:var(--gold)">+</span><div class="label">Happy Patients Treated</div></div>
+    <div class="stat"><span class="num" data-count="15">0</span><span style="color:var(--gold)">+</span><div class="label">Treatments Offered</div></div>
     <div class="stat"><span class="num" data-count="100">0</span><span style="color:var(--gold)">%</span><div class="label">Hygiene Certified</div></div>
   </div>
 </div>
@@ -479,7 +495,32 @@ img{max-width:100%;display:block}
         <span class="value"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5.2 4.7 1.5 7-6.3-3.6-6.3 3.6 1.5-7L2 9.4l7-.9z"/></svg>Transparent Pricing</span>
       </div>
     </div>
-  </div>
+    </div>
+    <div class="container doctors">
+      <div class="doctors-head reveal">
+        <span class="eyebrow">Meet the Doctors</span>
+        <h3>Led by experienced specialists who treat you like family.</h3>
+        <p>Our clinical team brings together deep expertise in gum care and oral surgery — with the patience to explain every step.</p>
+      </div>
+      <div class="doctors-grid">
+        <div class="doctor-card reveal">
+          <img class="doctor-photo" src="/__l5e/assets-v1/1159508d-a357-4f3c-974a-3acc3f0d3293/dr-monica.jpg" alt="Dr. Monica Bajaj" loading="lazy" />
+          <div class="doctor-info">
+            <h4>Dr. Monica Bajaj</h4>
+            <div class="doctor-quals">BDS, MDS</div>
+            <div class="doctor-spec">Periodontist — gum health, deep cleaning, and laser gum treatments.</div>
+          </div>
+        </div>
+        <div class="doctor-card reveal delay-1">
+          <img class="doctor-photo" src="/__l5e/assets-v1/f5cc6771-d142-4b4f-8b1c-2f1438fda6f9/dr-guru.png" alt="Dr. Guru Charan" loading="lazy" />
+          <div class="doctor-info">
+            <h4>Dr. Guru Charan</h4>
+            <div class="doctor-quals">BDS, MDS</div>
+            <div class="doctor-spec">Oral & Maxillofacial Surgeon — implants, wisdom tooth surgery, and complex extractions.</div>
+          </div>
+        </div>
+      </div>
+    </div>
 </section>
 
 <!-- ============ SERVICES ============ -->
@@ -491,14 +532,20 @@ img{max-width:100%;display:block}
       <p>From routine checkups to advanced cosmetic work, our clinic offers the full spectrum of dental treatments for every age.</p>
     </div>
     <div class="services-grid">
-      ${service("check","General Checkup","A thorough oral exam plus honest advice on what your teeth actually need.")}
-      ${service("root","Root Canal Treatment","Save your natural tooth with modern, single-sitting root canal therapy.")}
-      ${service("clean","Cleaning & Scaling","Professional scaling and polishing that leaves your teeth feeling brand-new.")}
-      ${service("tooth","Tooth Extraction","Careful, low-pain extractions using proper anaesthesia and aftercare.")}
-      ${service("braces","Braces & Orthodontics","Metal, ceramic and clear aligners to gently straighten teeth at any age.")}
-      ${service("implant","Dental Implants","Permanent tooth replacements that look, feel and function like the real thing.")}
-      ${service("smile","Smile Makeover","Whitening, veneers and cosmetic reshaping designed for your face and smile.")}
-      ${service("kids","Kids Dental Care","A calm, friendly experience — so your child grows up unafraid of the dentist.")}
+      ${service("syringe","Root Canal Treatment","Save your natural tooth with modern, single-sitting root canal therapy.")}
+      ${service("sparkles","Teeth Whitening","Safe, in-clinic whitening for a brighter, healthier-looking smile.")}
+      ${service("brush","Scaling & Root Planing","Deep cleaning that lifts stains, tartar and keeps your gums pink and firm.")}
+      ${service("scissors","Gum Surgery","Precise, gentle gum surgery to restore healthy tissue and stop bleeding.")}
+      ${service("layers","Crowns & Bridges","Natural-looking crowns and bridges that rebuild strength and confidence.")}
+      ${service("anchor","Dental Implants","Permanent tooth replacements that look, feel and bite like the real thing.")}
+      ${service("dot","Tooth-Colored Fillings","Discreet, tooth-matched fillings that repair decay without dark metal.")}
+      ${service("grid","Partial & Complete Dentures","Comfortable, well-fitted dentures crafted to help you chew and smile freely.")}
+      ${service("wind","Wisdom Tooth Removal","Careful wisdom tooth removal with proper anaesthesia and quick recovery.")}
+      ${service("align","Alignment of Misplaced Teeth","Braces and clear options to gently straighten crowded or shifted teeth.")}
+      ${service("sliders","Teeth Aligners","Nearly invisible aligners that reshape your smile on your schedule.")}
+      ${service("gem","Tooth Jewellery","Sparkling, safe tooth jewels for a little extra shine when you smile.")}
+      ${service("heart","Elderly Patient Care","Patient, unhurried dental care designed around senior comfort and mobility.")}
+      ${service("baby","Kids' Treatment","A calm, friendly experience — so your child grows up unafraid of the dentist.")}
     </div>
   </div>
 </section>
@@ -743,7 +790,7 @@ img{max-width:100%;display:block}
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="brand"><div class="brand-mark">K</div><div>Krishna's Dant Ayush<small>Family Dental Clinic</small></div></div>
+        <div class="brand"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-3.5 0-6 2-6 5.5 0 2 .8 3.6 1.4 4.9.4.9.6 1.4.6 2.1v3.5c0 1.4.9 3 2 3 .9 0 1.2-1.2 1.5-2.6.3-1.5.4-2.4 1-2.4.5 0 .7 1 1 2.4.3 1.4.6 2.6 1.5 2.6 1.1 0 2-1.6 2-3v-3.5c0-.7.2-1.2.6-2.1C17.2 11.1 18 9.5 18 7.5 18 4 15.5 2 12 2Z"/></svg></div><div>Krishna's Dant Ayush<small>Family Dental Clinic</small></div></div>
         <p>Gentle, honest dental care in the heart of Madhapur. Trusted by families across Hyderabad for over a decade.</p>
         <div class="socials">
           <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
@@ -921,15 +968,22 @@ function handleFeedback(e){
 
 // Small helpers used above (template-literal only; produce plain HTML strings)
 function service(icon: string, title: string, desc: string) {
+  const L = (paths: string) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
   const icons: Record<string, string> = {
-    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
-    root: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-4 0-6 3-6 7 0 4 2 5 2 9 0 2 1 4 2 4s1-3 2-3 1 3 2 3 2-2 2-4c0-4 2-5 2-9 0-4-2-7-6-7z"/></svg>',
-    clean: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l4-4"/><path d="M7 17l8-8"/><rect x="14" y="2" width="6" height="10" rx="2" transform="rotate(45 17 7)"/></svg>',
-    tooth: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-4 0-6 3-6 7 0 4 2 5 2 9 0 2 1 4 2 4s1-3 2-3 1 3 2 3 2-2 2-4c0-4 2-5 2-9 0-4-2-7-6-7z"/><line x1="15" y1="7" x2="20" y2="2"/></svg>',
-    braces: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="6" rx="2"/><line x1="7" y1="9" x2="7" y2="15"/><line x1="12" y1="9" x2="12" y2="15"/><line x1="17" y1="9" x2="17" y2="15"/></svg>',
-    implant: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6"/><path d="M9 9h6l-1 4h-4z"/><path d="M11 13v4l-1 3M13 13v4l1 3"/></svg>',
-    smile: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>',
-    kids: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>',
+    syringe: L('<path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/>'),
+    sparkles: L('<path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/>'),
+    brush: L('<path d="m11 10 3 3"/><path d="M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z"/><path d="M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031"/>'),
+    scissors: L('<circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/>'),
+    layers: L('<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>'),
+    anchor: L('<path d="M12 6v16"/><path d="m19 13 2-1a9 9 0 0 1-18 0l2 1"/><path d="M9 11h6"/><circle cx="12" cy="4" r="2"/>'),
+    dot: L('<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="1"/>'),
+    grid: L('<rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/>'),
+    wind: L('<path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/>'),
+    align: L('<path d="M21 5H3"/><path d="M17 12H7"/><path d="M19 19H5"/>'),
+    sliders: L('<path d="M10 5H3"/><path d="M12 19H3"/><path d="M14 3v4"/><path d="M16 17v4"/><path d="M21 12h-9"/><path d="M21 19h-5"/><path d="M21 5h-7"/><path d="M8 10v4"/><path d="M8 12H3"/>'),
+    gem: L('<path d="M10.5 3 8 9l4 13 4-13-2.5-6"/><path d="M17 3a2 2 0 0 1 1.6.8l3 4a2 2 0 0 1 .013 2.382l-7.99 10.986a2 2 0 0 1-3.247 0l-7.99-10.986A2 2 0 0 1 2.4 7.8l2.998-3.997A2 2 0 0 1 7 3z"/><path d="M2 9h20"/>'),
+    heart: L('<path d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762"/>'),
+    baby: L('<path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M15 12h.01"/><path d="M19.38 6.813A9 9 0 0 1 20.8 10.2a2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/><path d="M9 12h.01"/>'),
   };
   return `<div class="service-card reveal"><div class="service-icon">${icons[icon]}</div><h3>${title}</h3><p>${desc}</p></div>`;
 }

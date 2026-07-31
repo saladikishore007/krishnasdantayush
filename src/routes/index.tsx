@@ -62,7 +62,7 @@ const html = `<!DOCTYPE html>
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-    "opens": "10:00",
+    "opens": "10:30",
     "closes": "20:30"
   }],
   "aggregateRating": {
@@ -316,6 +316,13 @@ img{max-width:100%;display:block}
 .gallery{background:linear-gradient(180deg,#f2ece0 0%,var(--bg) 100%)}
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .gallery-single{max-width:640px;margin:0 auto}
+.privacy-copy{max-width:820px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:36px}
+.privacy-copy h4{font-family:'Outfit',sans-serif;font-size:1.02rem;font-weight:600;color:var(--ink);margin-bottom:8px}
+.privacy-copy h4+p{margin-bottom:20px}
+.privacy-copy p{color:var(--ink-soft);font-size:.95rem;line-height:1.75}
+.privacy-copy p:last-child{margin-bottom:0}
+.privacy-copy a{color:var(--primary);font-weight:600}
+@media (max-width:640px){.privacy-copy{padding:24px 20px}}
 .ba-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .3s ease,box-shadow .3s ease}
 .ba-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
 .ba-slider{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:ew-resize;user-select:none;background:#eee}
@@ -942,6 +949,29 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
+<!-- ============ PRIVACY ============ -->
+<section class="section" id="privacy">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Your Data, Your Trust</span>
+      <h2>Privacy Policy</h2>
+      <p>How Krishna's Dant Ayush Dental Clinic collects, uses, and protects the information you share with us.</p>
+    </div>
+    <div class="privacy-copy reveal">
+      <h4>What we collect</h4>
+      <p>When you book an appointment, send a WhatsApp message, or submit the feedback form, we collect only what we need to help you — your name, phone number, preferred date and time, and anything you choose to tell us about your dental concern.</p>
+      <h4>How we use it</h4>
+      <p>Your details are used solely to confirm appointments, follow up on treatment, and reply to your questions. We never sell, rent, or share your personal or medical information with advertisers or third parties.</p>
+      <h4>Medical records &amp; photographs</h4>
+      <p>Clinical records are kept confidential and accessed only by our treating doctors and clinical staff. Before-and-after photographs are published on this website only with the patient's written consent, and consent can be withdrawn at any time.</p>
+      <h4>This website</h4>
+      <p>Our site does not run advertising trackers. Embedded services such as Google Maps and WhatsApp are governed by their own privacy policies once you interact with them.</p>
+      <h4>Your choices</h4>
+      <p>You may ask us to correct or delete your details, or to remove your photographs from this website, at any time. Write to us or call <a href="tel:+917013338012">+91 70133 38012</a> and we will action your request promptly.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="container">
@@ -961,6 +991,7 @@ img{max-width:100%;display:block}
         <a href="#services">Services</a>
         <a href="#reviews">Reviews</a>
         <a href="#faq">FAQs</a>
+        <a href="#privacy">Privacy Policy</a>
       </div>
       <div>
         <h4>Services</h4>
@@ -1194,17 +1225,17 @@ function handleFeedback(e){
   };
   const rules = [
     { k:['hour','time','timing','open','close','when','sunday','holiday','working'],
-      a: "We're open <b>Monday to Saturday, 10:00 AM – 8:30 PM</b>. Closed on Sundays." },
+      a: "We're open <b>Monday to Saturday, 10:30 AM – 8:30 PM</b>. Closed on Sundays." },
     { k:['fee','fees','cost','price','consult','consultation','op','charge','charges'],
       a: "Our consultation / OP fee is <b>₹350</b>. Treatment costs are shared transparently after your check-up — no surprises." },
     { k:['doctor','dentist','who','team','specialist','monica','guru','charan','bajaj','periodont','surgeon','maxillofacial'],
       a: "You'll be cared for by:<br/>• <b>Dr. Monika Bajaj</b> (BDS, MDS — Periodontist)<br/>• <b>Dr. Guru Charan</b> (BDS, MDS — Oral &amp; Maxillofacial Surgeon)" },
     { k:['service','treatment','offer','what do you','procedures','list'],
-      a: "We offer 14 treatments: Root Canal, Teeth Whitening, Scaling &amp; Root Planing, Gum Surgery, Crowns &amp; Bridges, Dental Implants, Tooth-Colored Fillings, Partial &amp; Complete Dentures, Wisdom Tooth Removal, Alignment of Misplaced Teeth, Teeth Aligners, Tooth Jewellery, Elderly Patient Care, and Kids' Treatment." },
+      a: "We offer 13 treatments: Root Canal, Teeth Whitening, Scaling &amp; Root Planing, Gum Surgery, Crowns &amp; Bridges, Dental Implants, Tooth-Colored Fillings, Partial &amp; Complete Dentures, Wisdom Tooth Removal, Teeth Alignment &amp; Aligners, Tooth Jewellery, Elderly Patient Care, and Kids' Treatment." },
     { k:['root canal','rct'], a: "Yes, we do <b>Root Canal Treatments</b> — modern, virtually painless, usually completed in 1–2 sittings." },
     { k:['whitening','bleach','yellow'], a: "Yes — in-clinic <b>Teeth Whitening</b> is available and gives visible results in a single visit." },
     { k:['implant'], a: "Yes, we place <b>Dental Implants</b>. Dr. Guru Charan is trained in Implant Dentistry (CDE, Al-Badar) and Oral &amp; Maxillofacial Surgery." },
-    { k:['brace','aligner','align','crooked','straighten','invisible'], a: "We offer both <b>Teeth Aligners</b> (clear aligners) and traditional alignment of misplaced teeth. Consult us to see what suits you best." },
+    { k:['brace','aligner','align','crooked','straighten','invisible'], a: "We offer <b>Teeth Alignment &amp; Aligners</b> — traditional braces and nearly invisible clear aligners. Consult us to see what suits you best." },
     { k:['wisdom','extract','remove','pull'], a: "Yes — <b>Wisdom Tooth Removal</b> and extractions are performed by our oral surgeon in-house." },
     { k:['gum','bleed','swollen','periodont','scaling','cleaning','polish'], a: "Absolutely. <b>Scaling &amp; Root Planing</b> and <b>Gum Surgery</b> are handled by our periodontist Dr. Monika Bajaj." },
     { k:['crown','bridge','cap'], a: "Yes, we offer <b>Crowns &amp; Bridges</b> to restore broken, discolored, or missing teeth." },

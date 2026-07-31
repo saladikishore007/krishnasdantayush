@@ -1,12 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-const beforeImg = "/images/before.png";
-const afterImg = "/images/after.png";
-const drMonicaImg = "/images/dr-monica.png";
+const logoImg = "/images/logo.png";
+const case1Before = "/images/case1-before.png";
+const case1After = "/images/case1-after.png";
+const case2Before = "/images/case2-before.png";
+const case2After = "/images/case2-after.png";
+const drMonikaImg = "/images/dr-monica.png";
 const drGuruImg = "/images/dr-guru.png";
-const certGuruImplant = "/images/cert-guru-implant.png";
-const certGuruMds = "/images/cert-guru-mds.png";
-const certMonicaBds = "/images/cert-monica-bds.png";
-const certGuruBds = "/images/cert-guru-bds.png";
+const cert1 = "/images/cert-1.png";
+const cert2 = "/images/cert-2.png";
+const cert3 = "/images/cert-3.png";
+const cert4 = "/images/cert-4.png";
 
 
 const html = `<!DOCTYPE html>
@@ -59,7 +62,7 @@ const html = `<!DOCTYPE html>
   "openingHoursSpecification": [{
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-    "opens": "10:00",
+    "opens": "10:30",
     "closes": "20:30"
   }],
   "aggregateRating": {
@@ -151,6 +154,7 @@ img{max-width:100%;display:block}
 .brand{display:flex;align-items:center;gap:10px;font-family:'Outfit',sans-serif;font-weight:700;color:var(--primary);font-size:1.1rem;line-height:1.1}
 .brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--primary-2));display:grid;place-items:center;color:#fff;font-weight:700;font-family:'Outfit';box-shadow:var(--shadow-sm)}
 .brand-mark svg{width:22px;height:22px}
+.brand-logo{width:38px;height:38px;object-fit:contain;background:none;border:0;display:block;flex-shrink:0}
 .brand small{display:block;font-size:.7rem;color:var(--muted);font-weight:500;letter-spacing:.1em;text-transform:uppercase}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-links a{font-size:.95rem;color:var(--ink);font-weight:500;position:relative;padding:6px 0}
@@ -312,6 +316,13 @@ img{max-width:100%;display:block}
 .gallery{background:linear-gradient(180deg,#f2ece0 0%,var(--bg) 100%)}
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .gallery-single{max-width:640px;margin:0 auto}
+.privacy-copy{max-width:820px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:36px}
+.privacy-copy h4{font-family:'Outfit',sans-serif;font-size:1.02rem;font-weight:600;color:var(--ink);margin-bottom:8px}
+.privacy-copy h4+p{margin-bottom:20px}
+.privacy-copy p{color:var(--ink-soft);font-size:.95rem;line-height:1.75}
+.privacy-copy p:last-child{margin-bottom:0}
+.privacy-copy a{color:var(--primary);font-weight:600}
+@media (max-width:640px){.privacy-copy{padding:24px 20px}}
 .ba-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .3s ease,box-shadow .3s ease}
 .ba-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
 .ba-slider{position:relative;aspect-ratio:4/3;overflow:hidden;cursor:ew-resize;user-select:none;background:#eee}
@@ -468,7 +479,7 @@ img{max-width:100%;display:block}
 <header class="header" id="header">
   <div class="container nav">
     <a href="#home" class="brand">
-      <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-3.5 0-6 2-6 5.5 0 2 .8 3.6 1.4 4.9.4.9.6 1.4.6 2.1v3.5c0 1.4.9 3 2 3 .9 0 1.2-1.2 1.5-2.6.3-1.5.4-2.4 1-2.4.5 0 .7 1 1 2.4.3 1.4.6 2.6 1.5 2.6 1.1 0 2-1.6 2-3v-3.5c0-.7.2-1.2.6-2.1C17.2 11.1 18 9.5 18 7.5 18 4 15.5 2 12 2Z"/></svg></div>
+      <img class="brand-logo" src="${logoImg}" alt="Krishna's Dant Ayush Dental Clinic logo" width="38" height="38" />
       <div>
         Krishna's Dant Ayush
         <small>Dental Clinic</small>
@@ -616,8 +627,8 @@ img{max-width:100%;display:block}
     </div>
     <div class="about-copy reveal delay-1">
       <span class="eyebrow">About the Clinic</span>
-      <h2>A neighbourhood clinic where every patient is remembered by name.</h2>
-      <p>Krishna's Dant Ayush was built on a simple idea — that going to the dentist shouldn't be something you dread. For over a decade, families across Madhapur have trusted us for honest advice, unhurried appointments, and treatment that's as gentle as it is thorough.</p>
+      <h2>A neighbourhood dental clinic where every patient is remembered by name.</h2>
+      <p>Krishna's Dant Ayush Dental Clinic was built on a simple idea — that going to the dentist shouldn't be something you dread. For over a decade, we've been the family dentist of choice for homes around Tulasi Nagar, and today we're known as a trusted dental clinic in Madhapur for honest advice, unhurried appointments, and dental care that's as gentle as it is thorough.</p>
       <p>We combine modern dental technology with the warmth of a family practice. From your first cleaning to a full smile makeover, every plan is built around you — your comfort, your budget, and your long-term dental health.</p>
       <p>Walk in as a patient. Leave feeling like family.</p>
       <div class="values">
@@ -636,9 +647,9 @@ img{max-width:100%;display:block}
       </div>
       <div class="doctors-grid">
         <div class="doctor-card reveal">
-          <img class="doctor-photo" src="${drMonicaImg}" alt="Dr. Monica Bajaj" loading="lazy" />
+          <img class="doctor-photo" src="${drMonikaImg}" alt="Dr. Monika Bajaj" loading="lazy" />
           <div class="doctor-info">
-            <h4>Dr. Monica Bajaj</h4>
+            <h4>Dr. Monika Bajaj</h4>
             <div class="doctor-quals">BDS, MDS</div>
             <div class="doctor-spec">Periodontist — gum health, deep cleaning, and laser gum treatments.</div>
           </div>
@@ -673,8 +684,7 @@ img{max-width:100%;display:block}
       ${service("dot","Tooth-Colored Fillings","Discreet, tooth-matched fillings that repair decay without dark metal.")}
       ${service("grid","Partial & Complete Dentures","Comfortable, well-fitted dentures crafted to help you chew and smile freely.")}
       ${service("wind","Wisdom Tooth Removal","Careful wisdom tooth removal with proper anaesthesia and quick recovery.")}
-      ${service("align","Alignment of Misplaced Teeth","Braces and clear options to gently straighten crowded or shifted teeth.")}
-      ${service("sliders","Teeth Aligners","Nearly invisible aligners that reshape your smile on your schedule.")}
+      ${service("align","Teeth Alignment & Aligners","Braces and nearly invisible clear aligners to gently straighten crowded or shifted teeth — on a schedule that fits you.")}
       ${service("gem","Tooth Jewellery","Sparkling, safe tooth jewels for a little extra shine when you smile.")}
       ${service("heart","Elderly Patient Care","Patient, unhurried dental care designed around senior comfort and mobility.")}
       ${service("baby","Kids' Treatment","A calm, friendly experience — so your child grows up unafraid of the dentist.")}
@@ -708,7 +718,7 @@ img{max-width:100%;display:block}
       <p>Fill in a few quick details and we'll open WhatsApp with your message ready to send. No calls, no waiting — just a real reply from our front desk.</p>
       <ul class="booking-info">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Parvatha Nagar Temple Road, Tulasi Nagar, Madhapur</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Mon – Sat · 10:00 AM – 8:00 PM</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Mon – Sat · 10:30 AM – 8:30 PM</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91 70133 38012</li>
       </ul>
     </div>
@@ -759,10 +769,11 @@ img{max-width:100%;display:block}
     <div class="section-head center reveal">
       <span class="eyebrow">Patient Gallery</span>
       <h2>Real smiles, real results.</h2>
-      <p>A before-and-after moment from one of our patients. Drag the slider to see the transformation.</p>
+      <p>Before-and-after moments from our patients. Drag the slider to see each transformation.</p>
     </div>
-    <div class="gallery-grid gallery-single">
-      ${ba("Smile Restoration","Reshaped and restored — completed in-clinic",beforeImg,afterImg)}
+    <div class="gallery-grid">
+      ${ba("Smile Restoration","Reshaped and restored — completed in-clinic",case1Before,case1After)}
+      ${ba("Full Upper Rehabilitation","Missing and worn teeth rebuilt for a confident bite",case2Before,case2After)}
     </div>
     <p class="gallery-note reveal">Every photo shared with the patient's consent. Individual results vary — we'll walk you through realistic expectations at your consultation.</p>
   </div>
@@ -778,10 +789,10 @@ img{max-width:100%;display:block}
     </div>
     <div class="certs-viewport reveal">
       <div class="certs-track" id="certsTrack">
-        ${cert(certGuruImplant,"Dr. Guru Charan","CDE Certificate — Implant Dentistry, Al-Badar Rural Dental College")}
-        ${cert(certGuruMds,"Dr. Guru Charan","MDS Degree — Rajiv Gandhi University of Health Sciences")}
-        ${cert(certMonicaBds,"Dr. Monica Bajaj","BDS Degree — Rajiv Gandhi University of Health Sciences")}
-        ${cert(certGuruBds,"Dr. Guru Charan","BDS Degree — Rajiv Gandhi University of Health Sciences")}
+        ${cert(cert1)}
+        ${cert(cert2)}
+        ${cert(cert3)}
+        ${cert(cert4)}
       </div>
       <div class="certs-actions">
         <div class="arrows">
@@ -883,7 +894,7 @@ img{max-width:100%;display:block}
       ${faq("Do you treat children?","Yes — we love our little patients. We have a dedicated approach to kids dental care that keeps them calm and comfortable, from first-tooth checkups to cavity fillings and braces.")}
       ${faq("Is dental treatment painful at your clinic?","Almost never. We use modern local anaesthesia and minimally invasive techniques. Most patients tell us they felt nothing during procedures like root canals, cleanings and extractions.")}
       ${faq("Do you accept walk-ins?","We do our best to accommodate walk-ins, but a quick WhatsApp booking helps us reserve time for you and avoid waiting. For emergencies, just call us — we'll fit you in.")}
-      ${faq("What are your clinic timings?","We are open Monday to Saturday, 10:00 AM to 8:00 PM. Closed on Sundays and public holidays. WhatsApp messages are usually answered within the hour on working days.")}
+      ${faq("What are your clinic timings?","We are open Monday to Saturday, 10:30 AM to 8:30 PM. Closed on Sundays and public holidays. WhatsApp messages are usually answered within the hour on working days.")}
       ${faq("Is parking available?","Yes, free two-wheeler parking is available right outside the clinic. Car parking is available on the temple road with easy access.")}
       ${faq("Do you offer EMI or payment plans?","For larger treatments like implants, braces or full smile makeovers, we can arrange flexible payment plans. Just ask during your consultation — no pressure.")}
     </div>
@@ -922,7 +933,7 @@ img{max-width:100%;display:block}
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
           <div>
             <h4>Clinic Hours</h4>
-            <p>Monday – Saturday: 10:00 AM – 8:00 PM<br/>Sunday: Closed</p>
+            <p>Monday – Saturday: 10:30 AM – 8:30 PM<br/>Sunday: Closed</p>
           </div>
         </div>
         <div class="info-card">
@@ -938,12 +949,35 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
+<!-- ============ PRIVACY ============ -->
+<section class="section" id="privacy">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Your Data, Your Trust</span>
+      <h2>Privacy Policy</h2>
+      <p>How Krishna's Dant Ayush Dental Clinic collects, uses, and protects the information you share with us.</p>
+    </div>
+    <div class="privacy-copy reveal">
+      <h4>What we collect</h4>
+      <p>When you book an appointment, send a WhatsApp message, or submit the feedback form, we collect only what we need to help you — your name, phone number, preferred date and time, and anything you choose to tell us about your dental concern.</p>
+      <h4>How we use it</h4>
+      <p>Your details are used solely to confirm appointments, follow up on treatment, and reply to your questions. We never sell, rent, or share your personal or medical information with advertisers or third parties.</p>
+      <h4>Medical records &amp; photographs</h4>
+      <p>Clinical records are kept confidential and accessed only by our treating doctors and clinical staff. Before-and-after photographs are published on this website only with the patient's written consent, and consent can be withdrawn at any time.</p>
+      <h4>This website</h4>
+      <p>Our site does not run advertising trackers. Embedded services such as Google Maps and WhatsApp are governed by their own privacy policies once you interact with them.</p>
+      <h4>Your choices</h4>
+      <p>You may ask us to correct or delete your details, or to remove your photographs from this website, at any time. Write to us or call <a href="tel:+917013338012">+91 70133 38012</a> and we will action your request promptly.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="brand"><div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-3.5 0-6 2-6 5.5 0 2 .8 3.6 1.4 4.9.4.9.6 1.4.6 2.1v3.5c0 1.4.9 3 2 3 .9 0 1.2-1.2 1.5-2.6.3-1.5.4-2.4 1-2.4.5 0 .7 1 1 2.4.3 1.4.6 2.6 1.5 2.6 1.1 0 2-1.6 2-3v-3.5c0-.7.2-1.2.6-2.1C17.2 11.1 18 9.5 18 7.5 18 4 15.5 2 12 2Z"/></svg></div><div>Krishna's Dant Ayush<small>Family Dental Clinic</small></div></div>
+        <div class="brand"><img class="brand-logo" src="${logoImg}" alt="Krishna's Dant Ayush Dental Clinic logo" width="38" height="38" /><div>Krishna's Dant Ayush<small>Family Dental Clinic</small></div></div>
         <p>Gentle, honest dental care in the heart of Madhapur. Trusted by families across Hyderabad for over a decade.</p>
         <div class="socials">
           <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
@@ -957,6 +991,7 @@ img{max-width:100%;display:block}
         <a href="#services">Services</a>
         <a href="#reviews">Reviews</a>
         <a href="#faq">FAQs</a>
+        <a href="#privacy">Privacy Policy</a>
       </div>
       <div>
         <h4>Services</h4>
@@ -1190,19 +1225,19 @@ function handleFeedback(e){
   };
   const rules = [
     { k:['hour','time','timing','open','close','when','sunday','holiday','working'],
-      a: "We're open <b>Monday to Saturday, 10:00 AM – 8:30 PM</b>. Closed on Sundays." },
+      a: "We're open <b>Monday to Saturday, 10:30 AM – 8:30 PM</b>. Closed on Sundays." },
     { k:['fee','fees','cost','price','consult','consultation','op','charge','charges'],
       a: "Our consultation / OP fee is <b>₹350</b>. Treatment costs are shared transparently after your check-up — no surprises." },
     { k:['doctor','dentist','who','team','specialist','monica','guru','charan','bajaj','periodont','surgeon','maxillofacial'],
-      a: "You'll be cared for by:<br/>• <b>Dr. Monica Bajaj</b> (BDS, MDS — Periodontist)<br/>• <b>Dr. Guru Charan</b> (BDS, MDS — Oral &amp; Maxillofacial Surgeon)" },
+      a: "You'll be cared for by:<br/>• <b>Dr. Monika Bajaj</b> (BDS, MDS — Periodontist)<br/>• <b>Dr. Guru Charan</b> (BDS, MDS — Oral &amp; Maxillofacial Surgeon)" },
     { k:['service','treatment','offer','what do you','procedures','list'],
-      a: "We offer 14 treatments: Root Canal, Teeth Whitening, Scaling &amp; Root Planing, Gum Surgery, Crowns &amp; Bridges, Dental Implants, Tooth-Colored Fillings, Partial &amp; Complete Dentures, Wisdom Tooth Removal, Alignment of Misplaced Teeth, Teeth Aligners, Tooth Jewellery, Elderly Patient Care, and Kids' Treatment." },
+      a: "We offer 13 treatments: Root Canal, Teeth Whitening, Scaling &amp; Root Planing, Gum Surgery, Crowns &amp; Bridges, Dental Implants, Tooth-Colored Fillings, Partial &amp; Complete Dentures, Wisdom Tooth Removal, Teeth Alignment &amp; Aligners, Tooth Jewellery, Elderly Patient Care, and Kids' Treatment." },
     { k:['root canal','rct'], a: "Yes, we do <b>Root Canal Treatments</b> — modern, virtually painless, usually completed in 1–2 sittings." },
     { k:['whitening','bleach','yellow'], a: "Yes — in-clinic <b>Teeth Whitening</b> is available and gives visible results in a single visit." },
     { k:['implant'], a: "Yes, we place <b>Dental Implants</b>. Dr. Guru Charan is trained in Implant Dentistry (CDE, Al-Badar) and Oral &amp; Maxillofacial Surgery." },
-    { k:['brace','aligner','align','crooked','straighten','invisible'], a: "We offer both <b>Teeth Aligners</b> (clear aligners) and traditional alignment of misplaced teeth. Consult us to see what suits you best." },
+    { k:['brace','aligner','align','crooked','straighten','invisible'], a: "We offer <b>Teeth Alignment &amp; Aligners</b> — traditional braces and nearly invisible clear aligners. Consult us to see what suits you best." },
     { k:['wisdom','extract','remove','pull'], a: "Yes — <b>Wisdom Tooth Removal</b> and extractions are performed by our oral surgeon in-house." },
-    { k:['gum','bleed','swollen','periodont','scaling','cleaning','polish'], a: "Absolutely. <b>Scaling &amp; Root Planing</b> and <b>Gum Surgery</b> are handled by our periodontist Dr. Monica Bajaj." },
+    { k:['gum','bleed','swollen','periodont','scaling','cleaning','polish'], a: "Absolutely. <b>Scaling &amp; Root Planing</b> and <b>Gum Surgery</b> are handled by our periodontist Dr. Monika Bajaj." },
     { k:['crown','bridge','cap'], a: "Yes, we offer <b>Crowns &amp; Bridges</b> to restore broken, discolored, or missing teeth." },
     { k:['filling','cavity','decay'], a: "Yes — <b>Tooth-Colored Fillings</b> that blend naturally with your tooth." },
     { k:['denture'], a: "Yes, both <b>Partial and Complete Dentures</b> are made in-clinic for a comfortable fit." },
@@ -1310,8 +1345,8 @@ function ba(title: string, desc: string, before: string, after: string) {
   const afterImg = after ? `<img class="ba-after" src="${after}" alt="${title} after" loading="lazy"/>` : `<div class="ba-after" style="width:200%;height:100%;position:relative">${placeholder("After")}</div>`;
   return `<div class="ba-card reveal"><div class="ba-slider" data-ba>${beforeImg}<div class="after-wrap">${afterImg}</div><span class="ba-tag before">Before</span><span class="ba-tag after">After</span><div class="ba-handle"></div></div><div class="ba-caption"><h3>${title}</h3><p>${desc}</p></div></div>`;
 }
-function cert(src: string, name: string, desc: string) {
-  return `<div class="cert-card reveal"><div class="cert-img"><img src="${src}" alt="${name} — ${desc}" loading="lazy" draggable="false"/></div><div class="cert-caption"><h4>${name}</h4><p>${desc}</p></div></div>`;
+function cert(src: string) {
+  return `<div class="cert-card reveal"><div class="cert-img"><img src="${src}" alt="Certification awarded to our clinical team" loading="lazy" draggable="false"/></div></div>`;
 }
 
 export const Route = createFileRoute("/")({

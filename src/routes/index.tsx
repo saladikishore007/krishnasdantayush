@@ -628,9 +628,7 @@ img{max-width:100%;display:block}
     <div class="about-copy reveal delay-1">
       <span class="eyebrow">About the Clinic</span>
       <h2>A neighbourhood dental clinic where every patient is remembered by name.</h2>
-      <p>Krishna's Dant Ayush Dental Clinic was built on a simple idea — that going to the dentist shouldn't be something you dread. For over a decade, we've been the family dentist of choice for homes around Tulasi Nagar, and today we're known as a trusted dental clinic in Madhapur for honest advice, unhurried appointments, and dental care that's as gentle as it is thorough.</p>
-      <p>We combine modern dental technology with the warmth of a family practice. From your first cleaning to a full smile makeover, every plan is built around you — your comfort, your budget, and your long-term dental health.</p>
-      <p>Walk in as a patient. Leave feeling like family.</p>
+      <p>Welcome to Krishna's Dant Ayush, Centre for Advanced Dentistry & implantology. We, at Dant Ayush, aim to provide a comprehensive dental treatment according to needs of the patients. We understand, the fear and anxiety of a patient to visit a dental clinic. Hence, we aim at being good listeners and plan a treatment plan that will be only helpfull to the patient. The services offered here are all types of dental problems that any person may face during his life time. We have in- house periodontist to deal with all your gum problems and in-house Oral surgeon to take care of tooth removal, jaw fracture, facial scars, etc. Also we have consultants to provide you best treatment in their respective speciality.</p>
       <div class="values">
         <span class="value"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5.2 4.7 1.5 7-6.3-3.6-6.3 3.6 1.5-7L2 9.4l7-.9z"/></svg>Painless Treatment</span>
         <span class="value"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5.2 4.7 1.5 7-6.3-3.6-6.3 3.6 1.5-7L2 9.4l7-.9z"/></svg>Strict Hygiene</span>
@@ -833,11 +831,11 @@ img{max-width:100%;display:block}
     </div>
     <div class="reviews-carousel reveal delay-1">
       <div class="reviews-track" id="reviewsTrack">
-        ${review("Priya Sharma","2 weeks ago","Dr. Krishna and the team are wonderful. I was terrified of my root canal — turned out to be completely painless. They explained every step and never made me feel rushed. Highly recommend for anyone in Madhapur.")}
+        ${review("Priya Sharma","2 weeks ago","Dr. Monika Bajaj and the team are wonderful. I was terrified of my root canal — turned out to be completely painless. They explained every step and never made me feel rushed. Highly recommend for anyone in Madhapur.")}
         ${review("Rahul Verma","1 month ago","Took my 6-year-old for his first dental visit. The staff was so patient and friendly with him that he actually wants to go back. Clean clinic, honest advice, fair prices. Found our family dentist.")}
         ${review("Anitha Reddy","3 weeks ago","Got my braces done here. The consultation was thorough, they showed me all my options with real pricing (no upsell). Follow-up visits are always on time. Very professional.")}
         ${review("Vikram Nair","2 months ago","Had my dental cleaning and a chipped tooth fixed on the same visit. Modern equipment, super hygienic, and the doctor genuinely cares. Booking on WhatsApp made everything easy.")}
-        ${review("Sneha Patel","1 week ago","Best dental experience I've had in Hyderabad. Dr. Krishna took time to understand my concerns before jumping to treatment. My smile makeover results look completely natural. Thank you!")}
+        ${review("Sneha Patel","1 week ago","Best dental experience I've had in Hyderabad. Dr. Guru Charan took time to understand my concerns before jumping to treatment. My smile makeover results look completely natural. Thank you!")}
       </div>
       <div class="reviews-actions">
         <div class="arrows">

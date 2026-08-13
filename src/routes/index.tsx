@@ -10,6 +10,7 @@ const cert1 = "/images/cert-1.png";
 const cert2 = "/images/cert-2.png";
 const cert3 = "/images/cert-3.png";
 const cert4 = "/images/cert-4.png";
+const aboutClinicImg = "/images/about-clinic.png";
 
 
 const html = `<!DOCTYPE html>

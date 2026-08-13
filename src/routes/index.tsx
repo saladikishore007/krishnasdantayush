@@ -607,24 +607,9 @@ img{max-width:100%;display:block}
 <section class="section about" id="about">
   <div class="container about-grid">
     <div class="about-visual reveal">
-      <svg viewBox="0 0 500 560" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="ab" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0ece7"/><stop offset="1" stop-color="#f4ecd8"/></linearGradient>
-        </defs>
-        <rect width="500" height="560" fill="url(#ab)"/>
-        <circle cx="250" cy="220" r="90" fill="#ffffff"/>
-        <path d="M250 160 C280 160 300 190 300 230 C300 280 275 320 250 320 C225 320 200 280 200 230 C200 190 220 160 250 160Z" fill="#0f3d3e"/>
-        <circle cx="230" cy="220" r="6" fill="#fff"/>
-        <circle cx="270" cy="220" r="6" fill="#fff"/>
-        <path d="M215 260 Q250 285 285 260" stroke="#c9a24b" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <rect x="120" y="360" width="260" height="140" rx="18" fill="#ffffff"/>
-        <rect x="140" y="380" width="180" height="10" rx="5" fill="#cfe6d9"/>
-        <rect x="140" y="400" width="220" height="10" rx="5" fill="#cfe6d9"/>
-        <rect x="140" y="420" width="140" height="10" rx="5" fill="#cfe6d9"/>
-        <circle cx="340" cy="440" r="18" fill="#c9a24b"/>
-        <path d="M334 440 L338 444 L348 434" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      <img src="${aboutClinicImg}" alt="Dentist at Krishna's Dant Ayush treating a patient in Madhapur, Hyderabad" style="width:100%;height:100%;object-fit:cover" loading="lazy" />
     </div>
+
     <div class="about-copy reveal delay-1">
       <span class="eyebrow">About the Clinic</span>
       <h2>A neighbourhood dental clinic where every patient is remembered by name.</h2>

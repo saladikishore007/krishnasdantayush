@@ -68,7 +68,7 @@ const html = `<!DOCTYPE html>
   }],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "4.9",
+    "ratingValue": "5.0",
     "reviewCount": "150"
   },
   "areaServed": [
@@ -529,7 +529,7 @@ img{max-width:100%;display:block}
       <p class="lead">Krishna's Dant Ayush is a neighbourhood dental clinic in Madhapur caring for families across Hyderabad — from your child's first checkup to a confident new smile.</p>
       <div class="trust">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5.2 4.7 1.5 7-6.3-3.6-6.3 3.6 1.5-7L2 9.4l7-.9z"/></svg>
-        Rated 4.9 / 5 by patients on Google
+        Rated 5 / 5 by patients on Google
       </div>
       <div class="hero-ctas">
         <a href="https://wa.me/917013338012?text=Hi%2C%20I%27d%20like%20to%20book%20an%20appointment%20at%20Krishna%27s%20Dant%20Ayush." target="_blank" rel="noopener" class="btn btn-primary">
@@ -620,6 +620,7 @@ img{max-width:100%;display:block}
         <span class="value"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5.2 4.7 1.5 7-6.3-3.6-6.3 3.6 1.5-7L2 9.4l7-.9z"/></svg>Strict Hygiene</span>
         <span class="value"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5.2 4.7 1.5 7-6.3-3.6-6.3 3.6 1.5-7L2 9.4l7-.9z"/></svg>Personal Attention</span>
         <span class="value"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5.2 4.7 1.5 7-6.3-3.6-6.3 3.6 1.5-7L2 9.4l7-.9z"/></svg>Transparent Pricing</span>
+        <span class="value"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5.2 4.7 1.5 7-6.3-3.6-6.3 3.6 1.5-7L2 9.4l7-.9z"/></svg>Women-Led Clinic</span>
       </div>
     </div>
     </div>
@@ -807,10 +808,10 @@ img{max-width:100%;display:block}
       <div class="google-rating">
         <svg class="g-icon" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.6-6 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34.5 6.2 29.6 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.3-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34.5 6.2 29.6 4 24 4 16 4 9.2 8.5 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.5 0 10.4-2.1 14.1-5.6l-6.5-5.5C29.6 34.4 26.9 35.5 24 35.5c-5.3 0-9.7-3.4-11.3-8L6.1 32.6C9 39 15.9 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4 5.5l6.5 5.5C42 34 44 29.4 44 24c0-1.3-.1-2.3-.4-3.5z"/></svg>
         <div>
-          <div class="stars" aria-label="4.9 out of 5">
+          <div class="stars" aria-label="5 out of 5">
             ${star()}${star()}${star()}${star()}${star()}
           </div>
-          <strong>4.9 / 5</strong>
+          <strong>5 / 5</strong>
           <small>Based on 200+ Google reviews</small>
         </div>
       </div>
@@ -1243,7 +1244,7 @@ function handleFeedback(e){
     { k:['walk in','walk-in','walkin','without appointment','emergency'],
       a: "Walk-ins are accommodated when possible, but WhatsApp booking is recommended to avoid waiting. <b>Emergencies are always fitted in</b> — just call " + waLink + "." },
     { k:['rating','review','google','star'],
-      a: "We're rated <b>4.9 / 5 on Google</b> with <b>150+ reviews</b> from our patients. Thank you for the love ❤️" },
+      a: "We're rated <b>5 / 5 on Google</b> with <b>150+ reviews</b> from our patients. Thank you for the love ❤️" },
     { k:['hi','hello','hey','namaste','good morning','good evening','good afternoon'],
       a: "Hi there! 👋 How can I help you today — services, timings, fees, or booking?" },
     { k:['thank','thanks','thx'], a: "You're most welcome! Anything else I can help with?" },
